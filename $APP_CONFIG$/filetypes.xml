@@ -1,0 +1,19 @@
+<application>
+  <component name="FileTypeManager" version="18">
+    <extensionMap>
+      <mapping pattern="lösung" type="AUTO_DETECTED" />
+      <mapping pattern="DOM-Baum" type="AUTO_DETECTED" />
+      <mapping pattern="aufgabe2" type="AUTO_DETECTED" />
+      <mapping pattern="kata" type="AUTO_DETECTED" />
+      <mapping pattern="Aufgabe2" type="PLAIN_TEXT" />
+      <mapping pattern="Aufgabe3" type="PLAIN_TEXT" />
+      <mapping pattern="Aufgabe 5" type="PLAIN_TEXT" />
+      <mapping pattern="Aufgabe 1" type="PLAIN_TEXT" />
+      <mapping pattern="Aufgabe 4" type="PLAIN_TEXT" />
+      <mapping pattern="Übung 1" type="PLAIN_TEXT" />
+      <mapping pattern="Aufgabe 3" type="PLAIN_TEXT" />
+      <mapping pattern="Aufgabe1" type="PLAIN_TEXT" />
+      <mapping pattern="Aufgabe4" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>
