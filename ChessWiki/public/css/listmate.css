@@ -1,0 +1,11 @@
+#maincontainer {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.mateproblems {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    border-bottom: 10px solid #ff9100;
+}
