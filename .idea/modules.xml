@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ChessWiki.iml" filepath="$PROJECT_DIR$/.idea/ChessWiki.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/web-ha-ackermann-gromov.iml" filepath="$PROJECT_DIR$/.idea/web-ha-ackermann-gromov.iml" />
     </modules>
   </component>
 </project>
