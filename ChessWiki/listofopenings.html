@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>Liste der Eröffnungen</title>
-        <link rel="icon" href="public/img/favicon.ico">
-        <style>
-            body {
-                background-color: darkseagreen;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <figure>
-                <img alt="ChessWikiLogo" height="200" width="200" src="public/img/first_logo.png">
-            </figure>
-        </header>
-        <nav>
-            <a href="listmate.html">Rätsel</a> ::
-            <a href="listofopenings.html">Eröffnungen</a>
-        </nav>
-        <main>
-            <ol type="A">
-                <li>Unregelmäßige Eröffnungen, teilweise geschlossene Eröffnungen</li>
-                <li>Halboffene Eröffnungen (außer Französisch)</li>
-                <li>Offene Eröffnungen, Französisch</li>
-                <li>Geschlossene Eröffnungen, die nicht unter A und E fallen</li>
-                <li>Geschlossene Eröffnungen</li>
-            </ol>
-        </main>
-        <aside>
-            <h3>Aufgabe des Tages:</h3>
-            <figure>
-                <a href="detailmate1.html">
-                    <img alt="Aufgabe" height="150" width="150" src="public/img/Matt_In_1.png">
-                </a>
-                <figcaption>
-                    Weiß am Zuge
-                </figcaption>
-            </figure>
-        </aside>
-        <footer>
-            Von Daniel Ackermann und Alexander Gromov. Hausarbeit für Web-Technologien im WS 2020/2021. <a href="../doc/documentation.html">Dokumentation</a>
-        </footer>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Liste der Eröffnungen</title>
+    <link rel="icon" href="public/img/favicon.ico">
+    <link href="public/css/openings.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+    <figure>
+        <img alt="ChessWikiLogo" height="200" width="200" src="public/img/first_logo.png">
+    </figure>
+</header>
+<nav>
+    <a href="listmate.html">Rätsel</a> ::
+    <a href="listofopenings.html">Eröffnungen</a>
+</nav>
+<main>
+    <ol type="A">
+        <li>Unregelmäßige Eröffnungen, teilweise geschlossene Eröffnungen</li>
+        <li>Halboffene Eröffnungen (außer Französisch)</li>
+        <li>Offene Eröffnungen, Französisch
+            <ul class="firstUl">
+                <li>C00 - C19: Französische Verteidigung</li>
+                <li>C20 - C99: Offene Spiele
+                    <ul>
+                        <li>C30 - C39: Königsgambit</li>
+                        <li>C40 - C99: Königsspringerspiel
+                            <ul class="c40">
+                                <li>Königsspringerspiel
+                                    <ol class="variant">
+                                        <li>Lettisches Gambit</li>
+                                        <li>Mittelgambit im Nachzug</li>
+                                        <li>Damianos Verteidigung</li>
+                                        <li>Gunderam-Verteidigung</li>
+                                        <li>Greco-Verteidigung</li>
+                                    </ol>
+                                </li>
+                                <li>Philidor-Verteidigung</li>
+                                <li>Russische Verteidigung</li>
+                                <li>Steinitz-System</li>
+                                <li>Ponziani-Eröffnung</li>
+                                <li>Schottische Partie</li>
+                                <li>Dreispringerspiel</li>
+                                <li>Vierspringerspiel</li>
+                                <li>Spanisches Vierspringerspiel: Rubinstein-Variante</li>
+                                <li>Spanisches Vierspringerspiel: Symmetrie-Variante</li>
+                            </ul>
+                            <ul>
+                                <li>C50 - C59: Italienisches Spiel</li>
+                                <li>C60 - C99: Spanische Partie</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Geschlossene Eröffnungen, die nicht unter A und E fallen</li>
+        <li>Geschlossene Eröffnungen</li>
+    </ol>
+</main>
+<aside>
+    <h3>Aufgabe des Tages:</h3>
+    <figure>
+        <a href="detailmate1.html">
+            <img alt="Aufgabe" height="150" width="150" src="public/img/mate1easy.png">
+        </a>
+        <figcaption>
+            Weiß am Zuge
+        </figcaption>
+    </figure>
+</aside>
+<footer>
+    Von Daniel Ackermann und Alexander Gromov. Hausarbeit für Web-Technologien im WS 2020/2021. <a href="../doc/documentation.html">Dokumentation</a>
+</footer>
+</body>
 </html>
