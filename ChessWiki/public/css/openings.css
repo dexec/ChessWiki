@@ -1,8 +1,88 @@
+html, body, #maincontainer {
+    height: 100%; /* Damit der ganze Platz eingenommen wird und der Footer so immer ganz unten angezeigt wird (siehe grid-template-rows in #maincontainer) */
+}
+
 body {
     background-color: darkseagreen;
     font-family: "Tw Cen MT", "Gill Sans MT", "Segoe UI", sans-serif;
+    margin: 0; /* Damit es keinen Default-Rand gibt und Elemente wie z.B. Footer etwas "schweben" */
 }
 
+#maincontainer {
+    display: grid;
+    grid-template-areas: "header nav"
+                         "aside main"
+                         "footer footer";
+    grid-template-columns: 240px auto;
+    grid-template-rows: auto 1fr auto; /* 1fr = 1 verbleibender Platz. Dient zur Ausfüllung des Raumes und damit der Footer immer ganz unten ist */
+}
+
+header {
+    grid-area: header;
+    background-color: #45355b;
+    /* background: linear-gradient(to bottom, seagreen 10%, darkseagreen 50%); V2 */
+    /* background: linear-gradient(to bottom right, darkslategray 50%, darkseagreen); V3 */
+}
+
+nav {
+    grid-area: nav;
+    background-color: #45355b;
+    /* background: linear-gradient(to bottom, seagreen, darkseagreen 50%); V2 */
+    /* background: linear-gradient(to bottom, darkslategray, darkseagreen); V3 */
+}
+
+nav a {
+    font-size: xxx-large;
+    text-decoration: none;
+    color: white;
+}
+
+aside {
+    grid-area: aside;
+    /* background-color: #82A386; */
+    /* background: linear-gradient(to bottom, slategrey, darkseagreen 50%); V2 */
+    /* background: linear-gradient(to right, darkslategray, darkseagreen); V3 */
+}
+
+main { grid-area: main; }
+
+header a, aside {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header, nav {
+    border-bottom: 8px solid;
+    border-color: #2e1b3b;
+}
+
+nav a {
+    display: inline-block;
+    width: 24%; /* 25% bringt das letzte a auf die nächste Zeile obwohl Browser sagt, dass ein a genau ein Viertel Pixel von nav breit ist?! */
+    height: 100%;
+    text-align: center;
+}
+
+header a:hover, nav a:hover {
+    display: inline-block; /* Ist nötig, da der Hintergrund beim Logo sonst nicht richtig geändert wird */
+    background-color: #2e1b3b;
+}
+
+footer {
+    grid-area: footer;
+    background-color: seagreen;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer a {
+    color: mintcream;
+}
+
+/* Für die Eröffnungs-Liste */
 ul {
     list-style-type: none;
 }
