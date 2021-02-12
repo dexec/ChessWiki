@@ -1,54 +1,56 @@
-html, body, #maincontainer {
+html, body {
     height: 100%; /* Damit der ganze Platz eingenommen wird und der Footer so immer ganz unten angezeigt wird (siehe grid-template-rows in #maincontainer) */
 }
 
 body {
     background-color: darkseagreen;
-    font-family: "Tw Cen MT", "Gill Sans MT", "Segoe UI", sans-serif;
+    font-family:  "Gill Sans MT", "Tw Cen MT","Segoe UI", sans-serif;
     margin: 0; /* Damit es keinen Default-Rand gibt und Elemente wie z.B. Footer etwas "schweben" */
 }
 
 #maincontainer {
+    min-height: 100%; /* Musste von height zu min-height geändert werden, nachdem das Hinzufügen der zweiten grid-Reihe es gebrochen hatte */
     display: grid;
     grid-template-areas: "header nav"
+                         "header main"
                          "aside main"
                          "footer footer";
     grid-template-columns: 240px auto;
-    grid-template-rows: auto 1fr auto; /* 1fr = 1 verbleibender Platz. Dient zur Ausfüllung des Raumes und damit der Footer immer ganz unten ist */
+    grid-template-rows: auto auto 1fr auto; /* 1fr = 1 verbleibender Platz. Dient zur Ausfüllung des Raumes und damit der Footer immer ganz unten ist */
 }
 
 header {
     grid-area: header;
     background-color: #45355b;
-    /* background: linear-gradient(to bottom, seagreen 10%, darkseagreen 50%); V2 */
-    /* background: linear-gradient(to bottom right, darkslategray 50%, darkseagreen); V3 */
+    border-right: 8px solid;
+    border-color: #2e1b3b;
+}
+
+header a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header a span {
+    color: white;
+    letter-spacing: 0.9em;
+    font-weight: bold;
+    height: 100%;
+    display: none;
 }
 
 nav {
     grid-area: nav;
     background-color: #45355b;
-    /* background: linear-gradient(to bottom, seagreen, darkseagreen 50%); V2 */
-    /* background: linear-gradient(to bottom, darkslategray, darkseagreen); V3 */
 }
 
 nav a {
-    font-size: xxx-large;
+    font-size: xx-large;
     text-decoration: none;
     color: white;
-}
-
-aside {
-    grid-area: aside;
-    /* background-color: #82A386; */
-    /* background: linear-gradient(to bottom, slategrey, darkseagreen 50%); V2 */
-    /* background: linear-gradient(to right, darkslategray, darkseagreen); V3 */
-}
-
-main { grid-area: main; }
-
-header a, aside {
-    padding-left: 20px;
-    padding-right: 20px;
+    display: inline-block;
+    width: 24%; /* 25% bringt das letzte a auf die nächste Zeile obwohl Browser sagt, dass ein a genau ein Viertel Pixel von nav breit ist?! */
+    text-align: center;
 }
 
 header, nav {
@@ -56,16 +58,46 @@ header, nav {
     border-color: #2e1b3b;
 }
 
-nav a {
-    display: inline-block;
-    width: 24%; /* 25% bringt das letzte a auf die nächste Zeile obwohl Browser sagt, dass ein a genau ein Viertel Pixel von nav breit ist?! */
-    height: 100%;
-    text-align: center;
-}
-
 header a:hover, nav a:hover {
     display: inline-block; /* Ist nötig, da der Hintergrund beim Logo sonst nicht richtig geändert wird */
     background-color: #2e1b3b;
+}
+
+main { grid-area: main; }
+
+aside {
+    grid-area: aside;
+}
+
+aside figure {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #b8e0b8;
+}
+
+aside figure h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+aside figure figcaption {
+    text-align: center;
+}
+
+aside figure img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    border: 5px solid #45355b;
+}
+
+#ad img {
+    display: block;
+    border: 1px solid black;
+    margin: 14px;
 }
 
 footer {
@@ -82,7 +114,7 @@ footer a {
     color: mintcream;
 }
 
-/* Für die Eröffnungs-Liste */
+/* Ab hier für die automatisierte Nummerierung der Eröffnungs-Liste */
 ul {
     list-style-type: none;
 }
@@ -104,4 +136,26 @@ ul > li, .firstUl {
 .c40 > li::before {
     counter-increment: econumber;
     content: "C"counter(econumber)": ";
+}
+
+@media screen and (max-width: 1308px) {
+    nav a {
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 1045px) {
+    nav a {
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 1045px), screen and (max-height: 700px) {
+    header a img {
+        display: none;
+    }
+    header a span {
+        display: inline-block;
+        text-align: center;
+    }
 }
