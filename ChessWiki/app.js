@@ -9,6 +9,6 @@ app.set("views", "views");
 app.use(express.static("public"));
 app.use(router);
 
-app.listen(8040, function() {
-    console.log("http://localhost:8040");
+app.listen(8020, function() {
+    console.log("http://localhost:8020");
 });

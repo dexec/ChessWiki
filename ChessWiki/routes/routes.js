@@ -6,7 +6,7 @@ router.get("/listpositions", function (req, res) {
     res.render("listpositions", {positions: positions})
 });
 
-router.get("/listofopenings", function(req, res) {
+router.get("/listofopenings", function (req, res) {
     res.render("listofopenings");
 })
 
