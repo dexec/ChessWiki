@@ -1,0 +1,18 @@
+{
+  "name": "chesswiki",
+  "version": "1.0.0",
+  "description": "Das ist unser ChessWiki",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.inf.fh-dortmund.de/01/algro004/webtech-hausarbeit-chesswiki"
+  },
+  "author": "Alexander Gromov, Daniel Ackermann",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
