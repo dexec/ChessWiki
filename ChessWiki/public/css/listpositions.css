@@ -1,11 +1,19 @@
-#maincontainer {
+main {
     display: flex;
     flex-flow: column nowrap;
 }
 
-.mateproblems {
+#positions {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     border-bottom: 10px solid #ff9100;
+}
+.piece {
+    display: inline-block;
+    text-align: center;
+    margin:0;
+    border:1px solid;
+    min-height: 20px;
+    min-width: 20px;
 }

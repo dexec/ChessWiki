@@ -9,4 +9,4 @@ let position2 = new Positions("reeqkbnr/ppepeppp/eeneeeee/eeeepeee/eeePeeee/eeee
 let position3 = new Positions("rebqkber/ppPpeppp/eeneeeee/eeeepeee/eeePeePe/eeeeeNee/ePPePPPP/RNeQKBeR","w","KQkq",9);
 
 
-module.exports(position1,position2,position3);
+module.exports = [position1,position2,position3];
