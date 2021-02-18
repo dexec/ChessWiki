@@ -27,20 +27,33 @@
     <h2>Beispielhafte Stellungen</h2>
     <div id="positions">
         <% for(position of positions) { %>
-            <div>
-                <% for(let i = 0;i < 71;i++) { %>
-                    <% let tmp = position.positionString.substr(0,1); %>
-                    <% if(tmp === "/"){ %>
-                        <br>
+        <table>
+            <% for(let i = 8; i >= 1;i--) { %>
+            <tr>
+                <td><%=i%></td>
+                <% for(let j = 0;j < 8;j++) { %>
+                    <% let tmp = position.positionString.substr(0, 1); %>
+                    <% if(tmp==="e") { %>
+                        <td></td>
                     <% } else { %>
-                        <span class="piece"><%=tmp%></span>
-                    <% } %>
+                    <td><%=tmp%></td>
+                    <%}%>
                     <% position.positionString = position.positionString.substring(1) %>
                 <% } %>
-            </div>
+                <% position.positionString = position.positionString.substring(1) %>
+            </tr>
+            <% } %>
+            <tr id="letters">
+                <td></td>
+                <% let tmp = "abcdefgh" %>
+                <% for(let i = 0; i < 8;i++) { %>
+                <td><%= tmp.substr(0, 1) %></td>
+                <% tmp = tmp.substring(1) %>
+                <% } %>
+            </tr>
+        </table>
         <% } %>
     </div>
-
     <h2>Eigene Stellung</h2>
     <b>Hier können Sie Ihre eigenen Stellungen hinzufügen und analysieren</b>
 
