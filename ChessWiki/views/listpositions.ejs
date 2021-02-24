@@ -26,9 +26,9 @@
     </section>
     <h2>Beispielhafte Stellungen</h2>
     <div id="positions">
-        <% for(position of positions) { %>
-    <%-include("chessboard.ejs")%>
-        <% } %>
+        <%for(position of positions) {%>
+            <%- include("includes/chessboard.ejs") %>
+        <%}%>
     </div>
     <h2>Eigene Stellung</h2>
     <b>Hier können Sie Ihre eigenen Stellungen hinzufügen und analysieren</b>

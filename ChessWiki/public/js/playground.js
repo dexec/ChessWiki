@@ -1,4 +1,3 @@
-let string = "rebqkbnr/ppppeppp/eeneeeee/eeeepeee/eeePeeee/eeeeeNee/PPPePPPP/RNBQKBeR";
+const position = require("../../models/positions");
 
-console.log(string.substr(0,1));
-console.log(string.substring(2));
+console.log(position[0]);
