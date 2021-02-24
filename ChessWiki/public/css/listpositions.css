@@ -42,10 +42,16 @@ td:first-of-type,tr:last-of-type td {
 
 tr:nth-of-type(odd):not(:last-of-type) td:nth-of-type(odd):not(:first-of-type) {
     background-color: darkgray;
-    /*color: white;*/
 }
 
 tr:nth-of-type(even):not(:last-of-type) td:nth-of-type(even) {
     background-color: darkgray;
-    /*color: white;*/
+}
+
+tr:nth-of-type(odd):not(:last-of-type) td:nth-of-type(even):not(:first-of-type) {
+    background-color: white;
+}
+
+tr:nth-of-type(even):not(:last-of-type) td:nth-of-type(odd):not(:first-of-type) {
+    background-color: white;
 }

@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>Liste der Stellungen</title>
     <link href="css/listpositions.css" rel="stylesheet" type="text/css">
+    <link href="css/design.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<%- include("includes/header.ejs") %>
+<%- include("includes/nav.ejs") %>
 <main>
     <h1>Was ist eine Stellung im Schach?</h1>
     <section>
@@ -26,14 +29,15 @@
     </section>
     <h2>Beispielhafte Stellungen</h2>
     <div id="positions">
-        <%for(position of positions) {%>
-            <%- include("includes/chessboard.ejs") %>
-        <%}%>
+        <a href="/listpositions/position1"><%- include("includes/chessboard.ejs",{position:positions[0]}) %></a>
+        <a href="/listpositions/position2"><%- include("includes/chessboard.ejs",{position:positions[1]}) %></a>
+        <a href="/listpositions/position3"><%- include("includes/chessboard.ejs",{position:positions[2]}) %></a>
     </div>
     <h2>Eigene Stellung</h2>
     <b>Hier können Sie Ihre eigenen Stellungen hinzufügen und analysieren</b>
-
     <button>Neue Stellung aufbauen</button>
 </main>
+<%- include("includes/aside.ejs") %>
+<%- include("includes/footer.ejs") %>
 </body>
 </html>
