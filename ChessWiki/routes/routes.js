@@ -7,7 +7,7 @@ router.get("/", function(req,res) {
 })
 
 router.get("/listpositions", function (req, res) {
-    res.render("listpositions", {positions: positions})
+    res.render("listpositions", {positions: positions.slice(0,4)});
 });
 
 router.get("/listofopenings", function (req, res) {
