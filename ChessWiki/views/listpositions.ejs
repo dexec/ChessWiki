@@ -27,46 +27,7 @@
     <h2>Beispielhafte Stellungen</h2>
     <div id="positions">
         <% for(position of positions) { %>
-        <table>
-            <% for(let i = 8; i >= 1;i--) { %>
-            <tr>
-                <td><%=i%></td>
-                <% for(let j = 0;j < 8;j++) { %>
-                    <% let tmp = position.positionString.substr(0, 1); %>
-                    <% switch(tmp) {
-                        case "K": %> <td>&#9812</td> <% break;
-                        case "Q": %> <td>&#9813</td> <% break;
-                        case "R": %> <td>&#9814</td> <% break;
-                        case "B": %> <td>&#9815</td> <% break;
-                        case "N": %> <td>&#9816</td> <% break;
-                        case "P": %> <td>&#9817</td> <% break;
-                        case "k": %> <td>&#9818</td> <% break;
-                        case "q": %> <td>&#9819</td> <% break;
-                        case "r": %> <td>&#9820</td> <% break;
-                        case "b": %> <td>&#9821</td> <% break;
-                        case "n": %> <td>&#9822</td> <% break;
-                        case "p": %> <td>&#9823</td> <% break;
-                        default: %> <td></td>
-                    <% } %>
-                    <!--<% if(tmp==="e") { %>
-                        <td></td>
-                    <% } else { %>
-                    <td><%=tmp%></td>
-                    <%}%>-->
-                    <% position.positionString = position.positionString.substring(1) %>
-                <% } %>
-                <% position.positionString = position.positionString.substring(1) %>
-            </tr>
-            <% } %>
-            <tr id="letters">
-                <td></td>
-                <% let tmp = "ABCDEFGH" %>
-                <% for(let i = 0; i < 8;i++) { %>
-                <td><%= tmp.substr(0, 1) %></td>
-                <% tmp = tmp.substring(1) %>
-                <% } %>
-            </tr>
-        </table>
+    <%-include("chessboard.ejs")%>
         <% } %>
     </div>
     <h2>Eigene Stellung</h2>
