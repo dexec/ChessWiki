@@ -10,13 +10,13 @@ router.get("/listpositions", function (req, res) {
     res.render("listpositions", {positions: positions.slice(0, 4)});
 });
 router.get("/listpositions/position1", function (req, res) {
-    res.render("position", {positions: positions[0]});
+    res.render("position", {position: positions[0]});
 });
 router.get("/listpositions/position2", function (req, res) {
-    res.render("position", {positions: positions[1]});
+    res.render("position", {position: positions[1]});
 });
 router.get("/listpositions/position3", function (req, res) {
-    res.render("position", {positions: positions[2]});
+    res.render("position", {position: positions[2]});
 });
 
 router.get("/listofopenings", function (req, res) {

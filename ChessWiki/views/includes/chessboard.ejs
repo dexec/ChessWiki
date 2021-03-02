@@ -1,9 +1,10 @@
-    <table>
+<%let actualString = position.positionString%>
+<table>
         <% for(let i = 8; i >= 1;i--) { %>
         <tr>
             <td><%=i%></td>
             <% for(let j = 0;j < 8;j++) { %>
-                <% let tmp = position.positionString.substr(0, 1); %>
+                <% let tmp = actualString.substr(0, 1); %>
                 <% switch(tmp) {
                 case "K": %> <td>&#9812</td> <% break;
                 case "Q": %> <td>&#9813</td> <% break;
@@ -24,9 +25,9 @@
                     <% } else { %>
                     <td><%=tmp%></td>
                     <%}%>-->
-                <% position.positionString = position.positionString.substring(1) %>
+                <% actualString = actualString.substring(1) %>
             <% } %>
-            <% position.positionString = position.positionString.substring(1) %>
+            <% actualString = actualString.substring(1) %>
         </tr>
         <% } %>
         <tr id="letters">

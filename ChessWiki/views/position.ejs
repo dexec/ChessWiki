@@ -4,14 +4,62 @@
     <meta charset="UTF-8">
     <title>Position-A</title>
     <link href="../css/design.css" rel="stylesheet" type="text/css">
+    <link href="../css/chessboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<%- include("includes/header.ejs")%>
-<%- include("includes/nav.ejs")%>
+<%- include("includes/header.ejs") %>
+<%- include("includes/nav.ejs") %>
 <main>
-Blub
+    <%- include("includes/chessboard.ejs",{position:position}) %>
+    <% let actualString = position.positionString; %>
+    <% let countWhite = 0; %>
+    <% let countBlack = 0; %>
+    <% for (let i = 0; i < 71; i++) { %>
+        <% let tmp = actualString.substr(0, 1); %>
+        <% switch (tmp) {
+            case "K":
+                countBlack++;
+                break;
+            case "Q":
+                countBlack++;
+                break;
+            case "R":
+                countBlack++;
+                break;
+            case "B":
+                countBlack++;
+                break;
+            case "N":
+                countBlack++;
+                break;
+            case "P":
+                countBlack++;
+                break;
+            case "k":
+                countWhite++;
+                break;
+            case "q":
+                countWhite++;
+                break;
+            case "r":
+                countWhite++;
+                break;
+            case "b":
+                countWhite++;
+                break;
+            case "n":
+                countWhite++;
+                break;
+            case "p":
+                countWhite++;
+                break;
+            default:
+                break; %>
+        <% } %>
+        <% actualString = actualString.substring(1); %>
+    <% } %>
 </main>
-<%- include("includes/aside.ejs")%>
-<%- include("includes/footer.ejs")%>
+<%- include("includes/aside.ejs") %>
+<%- include("includes/footer.ejs") %>
 </body>
 </html>
