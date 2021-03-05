@@ -3,24 +3,27 @@ const router = express.Router();
 const positions = require("../models/positions");
 
 router.get("/", function (req, res) {
-    res.render("choose");
+    res.render("homepage");
 });
 
-router.get("/listpositions", function (req, res) {
+router.get("/positions", function (req, res) {
     res.render("listpositions", {positions: positions.slice(0, 4)});
 });
-router.get("/listpositions/position1", function (req, res) {
+
+router.get("/positions/position1", function (req, res) {
     res.render("position", {position: positions[0]});
 });
-router.get("/listpositions/position2", function (req, res) {
+
+router.get("/positions/position2", function (req, res) {
     res.render("position", {position: positions[1]});
 });
-router.get("/listpositions/position3", function (req, res) {
+
+router.get("/positions/position3", function (req, res) {
     res.render("position", {position: positions[2]});
 });
 
-router.get("/listofopenings", function (req, res) {
-    res.render("listofopenings");
+router.get("/openings", function (req, res) {
+    res.render("listopenings");
 });
 
 module.exports = router;

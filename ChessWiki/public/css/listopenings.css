@@ -1,0 +1,23 @@
+/* Ab hier für die automatisierte Nummerierung der Eröffnungs-Liste */
+ul {
+    list-style-type: none;
+}
+
+.variant {
+    list-style-type: disc;
+}
+
+ul > li, .firstUl {
+    position: relative;
+    left: -15px;
+}
+
+.c40 {
+    counter-set: econumber 39;
+    list-style-type: none;
+}
+
+.c40 > li::before {
+    counter-increment: econumber;
+    content: "C"counter(econumber)": ";
+}

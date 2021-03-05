@@ -10,48 +10,7 @@ main {
     border-bottom: 10px solid #ff9100;
 }
 
-table {
-    border-collapse: collapse;
-}
-
-td {
-    text-align: center;
-    height: 21px;
-    width: 21px;
-}
-
-tr:first-of-type td:not(:first-of-type) {
-    border-top: 2px solid;
-}
-
-tr:nth-of-type(8) td:not(:first-of-type) {
-    border-bottom: 2px solid;
-}
-
-tr:not(:last-of-type) td:last-of-type {
-    border-right: 2px solid;
-}
-
-tr:not(:last-of-type) td:nth-of-type(2) {
-    border-left: 2px solid;
-}
-
-td:first-of-type,tr:last-of-type td {
-    font-size: xx-small;
-}
-
-tr:nth-of-type(odd):not(:last-of-type) td:nth-of-type(odd):not(:first-of-type) {
-    background-color: darkgray;
-}
-
-tr:nth-of-type(even):not(:last-of-type) td:nth-of-type(even) {
-    background-color: darkgray;
-}
-
-tr:nth-of-type(odd):not(:last-of-type) td:nth-of-type(even):not(:first-of-type) {
-    background-color: white;
-}
-
-tr:nth-of-type(even):not(:last-of-type) td:nth-of-type(odd):not(:first-of-type) {
-    background-color: white;
+#positions a {
+    text-decoration: none;
+    color: inherit;
 }
