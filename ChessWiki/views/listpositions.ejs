@@ -18,11 +18,12 @@
 <%- include("includes/header.ejs") %>
 <%- include("includes/nav.ejs") %>
 <main>
-    <h1>Was ist eine Stellung im Schach?</h1>
     <section>
+        <h1>Was ist eine Stellung im Schach?</h1>
         <p>
             Eine Stellung im Schach beschreibt eine legale Positions einer Schachpartie.
             Legal bedeutet, dass folgende Regeln eingehalten werden müssen:
+        </p>
         <ul>
             <li>Beider Farben haben genau einen König, die Könige haben mindestens ein Feld zwischen ihnen</li>
             <li>Beide Farben haben höchstens 8 Bauern, es stehen keine Bauern auf der ersten und achten Reihe</li>
@@ -32,18 +33,20 @@
             <li>Beide Könige können nicht gleichzeitig im Schach stehen</li>
             <li>In einer Stellung ist immer eine Farbe am Zug</li>
         </ul>
-        <p>
-            Jede Stellung hat immer eine Wertung, diese besagt, wie gut man in einer Stellung steht.
+        <p> Jede Stellung hat immer eine Wertung, diese besagt, wie gut man in einer Stellung steht.
+        </p>
     </section>
-    <h2>Beispielhafte Stellungen</h2>
-    <div id="positions">
-        <a href="/positions/position1"><%- include("includes/chessboard.ejs",{position:positions[0]}) %></a>
-        <a href="/positions/position2"><%- include("includes/chessboard.ejs",{position:positions[1]}) %></a>
-        <a href="/positions/position3"><%- include("includes/chessboard.ejs",{position:positions[2]}) %></a>
-    </div>
-    <h2>Eigene Stellung</h2>
-    <b>Hier können Sie Ihre eigenen Stellungen hinzufügen und analysieren</b>
-    <button>Neue Stellung aufbauen</button>
+    <section>
+        <h2>Beispielhafte Stellungen</h2>
+        <div id="positions">
+            <a href="/positions/position1"><%- include("includes/chessboard.ejs",{position:positions[0]}) %></a>
+            <a href="/positions/position2"><%- include("includes/chessboard.ejs",{position:positions[1]}) %></a>
+            <a href="/positions/position3"><%- include("includes/chessboard.ejs",{position:positions[2]}) %></a>
+        </div>
+        <h2>Eigene Stellung</h2>
+        <b>Hier können Sie Ihre eigenen Stellungen hinzufügen und analysieren</b>
+        <button>Neue Stellung aufbauen</button>
+    </section>
 </main>
 <%- include("includes/aside.ejs") %>
 <%- include("includes/footer.ejs") %>
