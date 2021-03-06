@@ -1,3 +1,17 @@
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+#list {
+    flex: 0 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
 /* Ab hier für die automatisierte Nummerierung der Eröffnungs-Liste */
 ul {
     list-style-type: none;
