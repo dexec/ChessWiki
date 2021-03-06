@@ -1,17 +1,22 @@
-main {
+section {
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
+    align-items:center;
 }
 
 #positions {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     border-bottom: 10px solid #ff9100;
 }
 
 #positions a {
     text-decoration: none;
     color: inherit;
+}
+
+td {
+    width: 21px;
+    height: 21px;
 }
