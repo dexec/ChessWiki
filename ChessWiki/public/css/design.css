@@ -4,7 +4,7 @@ html, body {
 
 body {
     background-color: darkseagreen;
-    font-family:  "Gill Sans MT", "Tw Cen MT","Segoe UI", sans-serif;
+    font-family: "Gill Sans MT", "Tw Cen MT", "Segoe UI", sans-serif;
     margin: 0; /* Damit es keinen Default-Rand gibt und Elemente wie z.B. Footer etwas "schweben" */
     min-height: 100%; /* Musste von height zu min-height geändert werden, nachdem das Hinzufügen der zweiten grid-Reihe es gebrochen hatte */
     display: grid;
@@ -60,7 +60,17 @@ header a:hover, nav a:hover {
     background-color: #2e1b3b;
 }
 
-main { grid-area: main; }
+main {
+    grid-area: main;
+    justify-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+section {
+    text-align: center;
+}
 
 aside {
     grid-area: aside;
@@ -128,6 +138,7 @@ footer a {
     header a img {
         display: none;
     }
+
     header a span {
         display: inline-block;
         text-align: center;

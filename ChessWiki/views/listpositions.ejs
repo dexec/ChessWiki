@@ -7,39 +7,45 @@
     <link href="/css/design.css" rel="stylesheet" type="text/css">
     <link href="/css/chessboard.css" rel="stylesheet" type="text/css">
     <link href="/css/listpositions.css" rel="stylesheet" type="text/css">
+    <style>
+        td {
+            width: 21px;
+            height: 21px;
+        }
+    </style>
 </head>
 <body>
-    <%- include("includes/header.ejs") %>
-    <%- include("includes/nav.ejs") %>
-    <main>
-        <h1>Was ist eine Stellung im Schach?</h1>
-        <section>
-            <p>
-                Eine Stellung im Schach beschreibt eine legale Positions einer Schachpartie.
-                Legal bedeutet, dass folgende Regeln eingehalten werden müssen:
-            <ul>
-                <li>Beider Farben haben genau einen König, die Könige haben mindestens ein Feld zwischen ihnen</li>
-                <li>Beide Farben haben höchstens 8 Bauern, es stehen keine Bauern auf der ersten und achten Reihe</li>
-                <li>Beide Farben haben höchstens 10 Springer, Läufer oder Türme</li>
-                <li>Beide Farben haben höchstens 9 Damen</li>
-                <li>Insgesamt darf es nicht mehr als 16 Figuren pro Farbe geben</li>
-                <li>Beide Könige können nicht gleichzeitig im Schach stehen</li>
-                <li>In einer Stellung ist immer eine Farbe am Zug</li>
-            </ul>
-            <p>
-                Jede Stellung hat immer eine Wertung, diese besagt, wie gut man in einer Stellung steht.
-        </section>
-        <h2>Beispielhafte Stellungen</h2>
-        <div id="positions">
-            <a href="/positions/position1"><%- include("includes/chessboard.ejs",{position:positions[0]}) %></a>
-            <a href="/positions/position2"><%- include("includes/chessboard.ejs",{position:positions[1]}) %></a>
-            <a href="/positions/position3"><%- include("includes/chessboard.ejs",{position:positions[2]}) %></a>
-        </div>
-        <h2>Eigene Stellung</h2>
-        <b>Hier können Sie Ihre eigenen Stellungen hinzufügen und analysieren</b>
-        <button>Neue Stellung aufbauen</button>
-    </main>
-    <%- include("includes/aside.ejs") %>
-    <%- include("includes/footer.ejs") %>
+<%- include("includes/header.ejs") %>
+<%- include("includes/nav.ejs") %>
+<main>
+    <h1>Was ist eine Stellung im Schach?</h1>
+    <section>
+        <p>
+            Eine Stellung im Schach beschreibt eine legale Positions einer Schachpartie.
+            Legal bedeutet, dass folgende Regeln eingehalten werden müssen:
+        <ul>
+            <li>Beider Farben haben genau einen König, die Könige haben mindestens ein Feld zwischen ihnen</li>
+            <li>Beide Farben haben höchstens 8 Bauern, es stehen keine Bauern auf der ersten und achten Reihe</li>
+            <li>Beide Farben haben höchstens 10 Springer, Läufer oder Türme</li>
+            <li>Beide Farben haben höchstens 9 Damen</li>
+            <li>Insgesamt darf es nicht mehr als 16 Figuren pro Farbe geben</li>
+            <li>Beide Könige können nicht gleichzeitig im Schach stehen</li>
+            <li>In einer Stellung ist immer eine Farbe am Zug</li>
+        </ul>
+        <p>
+            Jede Stellung hat immer eine Wertung, diese besagt, wie gut man in einer Stellung steht.
+    </section>
+    <h2>Beispielhafte Stellungen</h2>
+    <div id="positions">
+        <a href="/positions/position1"><%- include("includes/chessboard.ejs",{position:positions[0]}) %></a>
+        <a href="/positions/position2"><%- include("includes/chessboard.ejs",{position:positions[1]}) %></a>
+        <a href="/positions/position3"><%- include("includes/chessboard.ejs",{position:positions[2]}) %></a>
+    </div>
+    <h2>Eigene Stellung</h2>
+    <b>Hier können Sie Ihre eigenen Stellungen hinzufügen und analysieren</b>
+    <button>Neue Stellung aufbauen</button>
+</main>
+<%- include("includes/aside.ejs") %>
+<%- include("includes/footer.ejs") %>
 </body>
 </html>

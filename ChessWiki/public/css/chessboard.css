@@ -1,11 +1,12 @@
+
 table {
     border-collapse: collapse;
 }
 
 td {
     text-align: center;
-    height: 21px;
-    width: 21px;
+    height:21px;
+    width:21px;
 }
 
 tr:first-of-type td:not(:first-of-type) {
@@ -24,7 +25,7 @@ tr:not(:last-of-type) td:nth-of-type(2) {
     border-left: 2px solid;
 }
 
-td:first-of-type,tr:last-of-type td {
+td:first-of-type, tr:last-of-type td {
     font-size: xx-small;
 }
 
