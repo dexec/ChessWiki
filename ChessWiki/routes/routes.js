@@ -21,6 +21,9 @@ router.get("/positions/position2", function (req, res) {
 router.get("/positions/position3", function (req, res) {
     res.render("position", {position: positions[2]});
 });
+router.get("/positions/position4", function (req, res) {
+    res.render("position", {position: positions[3]});
+});
 
 router.get("/openings", function (req, res) {
     res.render("listopenings");

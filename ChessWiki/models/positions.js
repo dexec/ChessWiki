@@ -1,12 +1,78 @@
-function Positions(positionString, activeColor, castlingAvailability, moveNumber) {
+function Positions(positionString, activeColor, castlingAvailability, numberOfMoves) {
     this.positionString = positionString;
-    this.activeColor = activeColor;
-    this.castlingAvailibity = castlingAvailability;
-    this.moveNumber = moveNumber;
+    this.activeColor = function () {
+        return (activeColor === "w" ? "Weiß" : "Schwarz") + " ist am Zug.";
+    }
+    this.castlingAvailibity = function () {
+        let abgabe = "";
+        if (castlingAvailability.includes("K")) abgabe += " Weiß kann kurz rochieren.\n";
+        if (castlingAvailability.includes("Q")) abgabe += " Weiß kann lang rochieren.\n";
+        if (castlingAvailability.includes("k")) abgabe += " Schwarz kann kurz rochieren.\n";
+        if (castlingAvailability.includes("q")) abgabe += " Schwarz kann lang rochieren.\n";
+        if (!castlingAvailability.includes("K") && !castlingAvailability.includes("Q") && !castlingAvailability.includes("k") && !castlingAvailability.includes("q")) abgabe += "Keiner kann in dieser Stellung rochieren."
+        return abgabe;
+    }
+    this.numberOfMoves = function () {
+        return "Das Spiel ist im " + numberOfMoves++ + ". Zug.";
+    }
+    this.analysis = function () {
+        let numberCountPieces = this.countWhite() - this.countBlack();
+        let numberActiveColor = activeColor === "w" ? 0.5 : -0.5;
+        let numberCastlingAvailibility = function () {
+            let abgabe = 0;
+            if (castlingAvailability.includes("K")) abgabe += 0.5;
+            if (castlingAvailability.includes("Q")) abgabe += 0.5;
+            if (castlingAvailability.includes("k")) abgabe -= 0.5;
+            if (castlingAvailability.includes("q")) abgabe -= 0.5;
+            return abgabe;
+        }
+        return "Die Wertung beläuft sich somit auf " + (numberCountPieces + numberActiveColor + numberCastlingAvailibility());
+    }
+    this.countPieces = function () {
+        return "Weiß hat " + this.countWhite() + " Figuren und Schwarz hat " + this.countBlack() + " Figuren.";
+    }
+    this.countWhite = function () {
+        let abgabe = 0;
+        let actualString = positionString;
+        for (let i = 0; i < 71; i++) {
+            let tmp = actualString.substr(0, 1);
+            switch (tmp) {
+                case "K":
+                case "Q":
+                case "R":
+                case "B":
+                case "N":
+                case "P":
+                    abgabe++;
+                    break;
+            }
+            actualString = actualString.substring(1);
+        }
+        return abgabe;
+    }
+    this.countBlack = function () {
+        let abgabe = 0;
+        let actualString = positionString;
+        for (let i = 0; i < 71; i++) {
+            let tmp = actualString.substr(0, 1);
+            switch (tmp) {
+                case "k":
+                case "q":
+                case "r":
+                case "b":
+                case "n":
+                case "p":
+                    abgabe++;
+                    break;
+            }
+            actualString = actualString.substring(1);
+        }
+        return abgabe;
+    }
 }
 
-let listofopenings1 = new Positions("rebqkbnr/ppppeppp/eeneeeee/eeeepeee/eeePeeee/eeeeeNee/PPPePPPP/RNBQKBeR","w","KQkq",5);
-let listofopenings2 = new Positions("reeqkbnr/ppepeppp/eeneeeee/eeeepeee/eeePeeee/eeeeeNee/PPPePPeP/RNBQKBeR","b","KQkq",7);
-let listofopenings3 = new Positions("rebqkber/ppPpeppp/eeneeeee/eeeepeee/eeePeePe/eeeeeNee/ePPePPPP/RNeQKBeR","w","KQkq",9);
-
-module.exports = [listofopenings1, listofopenings2, listofopenings3];
+let listofopenings1 = new Positions("rnbqkenr/ppeeeppp/eepepeee/eeepeeee/ebPPeBee/eeNeeNee/PPeePPPP/ReeQKBeR", "b", "KQkq", 9);
+let listofopenings2 = new Positions("reeeerke/ppebeppp/eeeepnee/eePqeeee/eepPeBee/PeeePNee/eeQeePPP/ReeeeRKe", "b", "", 29);
+let listofopenings3 = new Positions("eeereeke/eeeeeppp/eeeBpeee/ebeneeee/peePeeee/eeeePeee/eeeeePPP/eeReeeKe", "w", "", 48);
+let listofopenings4 = new Positions("eeeekeee/eeeeeeee/eeeeeeee/PeeeeePe/eeeeePee/eeeePeee/eeeeeeee/eeeeKeee","w","",94);
+module.exports = [listofopenings1, listofopenings2, listofopenings3,listofopenings4];

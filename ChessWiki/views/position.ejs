@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Position-A</title>
+    <title>Position</title>
     <link href="/img/favicon.ico" rel="icon">
     <link href="/css/design.css" rel="stylesheet" type="text/css">
     <link href="/css/chessboard.css" rel="stylesheet" type="text/css">
@@ -13,7 +13,13 @@
 <%- include("includes/nav.ejs") %>
 <main>
     <%- include("includes/chessboard.ejs",{position:position}) %>
-    <%- include("includes/analysis.ejs",{position:position}) %>
+    <section>
+        <p><%=position.numberOfMoves()%></p>
+        <p><%=position.activeColor()%></p>
+        <p><%=position.countPieces()%></p>
+        <p><%=position.castlingAvailibity();%></p>
+        <p><%=position.analysis()%></p>
+    </section>
 </main>
 <%- include("includes/aside.ejs") %>
 <%- include("includes/footer.ejs") %>
