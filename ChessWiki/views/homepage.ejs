@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <title>ChessWiki Homepage</title>
     <link href="/img/favicon.ico" rel="icon">
+    <link href="/css/design.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <a href="/openings">Openings</a><br>
-    <a href="/positions">Positions</a>
+    <%- include("includes/header.ejs") %>
+    <%- include("includes/nav.ejs") %>
+    <main style="justify-self: center; text-align: center">
+        <section>
+            <h1>Herzlich Willkommen zur ChessWiki!</h1>
+            <p>Hier kannst du erfahren, was eine Stellung und eine Eröffnung im Schach sind.</p>
+            <p>Zu den Stellungen findest du mehrere Beispiele und zu einer Stellung wird eine kleine Analyse mitgeliefert.</p>
+            <p>Zu den Eröffnungen findest du eine Auswahl an Eröffnungen, welche du dir teilweise konkreter anschauen kannst.</p>
+            <p>Sowohl Eröffnungen als auch Stellungen kannst du außerdem eintragen bzw. aufbauen lassen.</p>
+            <p>Viel Spaß!</p>
+        </section>
+        <!--<a href="/openings">Openings</a>
+        <a href="/positions">Positions</a>-->
+    </main>
+    <%- include("includes/aside.ejs") %>
+    <%- include("includes/footer.ejs") %>
 </body>
 </html>

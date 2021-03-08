@@ -75,4 +75,4 @@ let listofopenings1 = new Positions("rnbqkenr/ppeeeppp/eepepeee/eeepeeee/ebPPeBe
 let listofopenings2 = new Positions("reeeerke/ppebeppp/eeeepnee/eePqeeee/eepPeBee/PeeePNee/eeQeePPP/ReeeeRKe", "b", "", 29);
 let listofopenings3 = new Positions("eeereeke/eeeeeppp/eeeBpeee/ebeneeee/peePeeee/eeeePeee/eeeeePPP/eeReeeKe", "w", "", 48);
 let listofopenings4 = new Positions("eeeekeee/eeeeeeee/eeeeeeee/PeeeeePe/eeeeePee/eeeePeee/eeeeeeee/eeeeKeee","w","",94);
-module.exports = [listofopenings1, listofopenings2, listofopenings3,listofopenings4];
+module.exports = [listofopenings1, listofopenings2, listofopenings3, listofopenings4];
