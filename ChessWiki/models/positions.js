@@ -3,7 +3,7 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
     this.activeColor = function () {
         return (activeColor === "w" ? "Weiß" : "Schwarz") + " ist am Zug.";
     }
-    this.castlingAvailibity = function () {
+    this.castlingAvailability = function () {
         let abgabe = "";
         if (castlingAvailability.includes("K")) abgabe += " Weiß kann kurz rochieren.\n";
         if (castlingAvailability.includes("Q")) abgabe += " Weiß kann lang rochieren.\n";

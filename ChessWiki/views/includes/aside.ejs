@@ -1,11 +1,11 @@
 <aside>
     <figure>
         <h3>Stellung des Tages</h3>
-        <a href=/positions/position2">
-
+        <a href="/positions/position2">
+            <%- include("chessboard.ejs", {position: positionOfTheDay}); %>
         </a>
         <figcaption>
-            Weiß am Zug
+            <%=positionOfTheDay.activeColor()%>
         </figcaption>
     </figure>
     <a href="" id="ad">

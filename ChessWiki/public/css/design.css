@@ -75,9 +75,30 @@ aside {
 
 aside figure {
     margin: 10px;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 15px;
     background-color: #b8e0b8;
+}
+
+aside figure a {
+    text-decoration: none;
+    color: inherit;
+}
+
+aside figure section {
+    margin: 0;
+}
+
+aside figure td {
+    width: 21px;
+    height: 21px;
+}
+
+aside figure table {
+    margin-top: 0;
+    margin-right: 0;
+    font-size: medium;
 }
 
 aside figure h3 {

@@ -1,12 +1,11 @@
-
 table {
     border-collapse: collapse;
 }
 
 td {
     text-align: center;
-    height:21px;
-    width:21px;
+    height: 21px;
+    width: 21px;
 }
 
 tr:first-of-type td:not(:first-of-type) {
