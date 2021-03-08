@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Position</title>
+    <title>Analyse</title>
     <link href="/img/favicon.ico" rel="icon">
     <link href="/css/design.css" rel="stylesheet" type="text/css">
     <link href="/css/chessboard.css" rel="stylesheet" type="text/css">
@@ -12,6 +12,7 @@
 <%- include("includes/header.ejs") %>
 <%- include("includes/nav.ejs") %>
 <main>
+    <h1>Stellungs-Analyse</h1>
     <%- include("includes/chessboard.ejs",{position:position}) %>
     <section>
         <p><%=position.numberOfMoves()%></p>

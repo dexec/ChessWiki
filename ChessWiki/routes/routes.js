@@ -31,6 +31,10 @@ router.get("/openings", function (req, res) {
     res.render("listopenings", {positionOfTheDay: positionOfTheDay});
 });
 
+router.get("/formposition", function(req,res) {
+    res.render("formposition",{positionOfTheDay: positionOfTheDay})
+});
+
 router.use(function(req, res) {
     res.render("404");
 });

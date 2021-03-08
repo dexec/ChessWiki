@@ -13,7 +13,7 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
         return abgabe;
     }
     this.numberOfMoves = function () {
-        return "Das Spiel ist im " + numberOfMoves++ + ". Zug.";
+        return "Das Spiel ist im " + numberOfMoves + ". Zug.";
     }
     this.analysis = function () {
         let numberCountPieces = this.countWhite() - this.countBlack();
@@ -71,8 +71,8 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
     }
 }
 
-let position1 = new Positions("rnbqkenr/ppeeeppp/eepepeee/eeepeeee/ebPPeBee/eeNeeNee/PPeePPPP/ReeQKBeR", "b", "KQkq", 9);
-let position2 = new Positions("reeeerke/ppebeppp/eeeepnee/eePqeeee/eepPeBee/PeeePNee/eeQeePPP/ReeeeRKe", "b", "", 29);
-let position3 = new Positions("eeereeke/eeeeeppp/eeeBpeee/ebeneeee/peePeeee/eeeePeee/eeeeePPP/eeReeeKe", "w", "", 48);
-let position4 = new Positions("eeeekeee/eeeeeeee/eeeeeeee/PeeeeePe/eeeeePee/eeeePeee/eeeeeeee/eeeeKeee", "w", "", 94);
+let position1 = new Position("rnbqkenr/ppeeeppp/eepepeee/eeepeeee/ebPPeBee/eeNeeNee/PPeePPPP/ReeQKBeR", "b", "KQkq", 9);
+let position2 = new Position("reeeerke/ppebeppp/eeeepnee/eePqeeee/eepPeBee/PeeePNee/eeQeePPP/ReeeeRKe", "b", "", 29);
+let position3 = new Position("eeereeke/eeeeeppp/eeeBpeee/ebeneeee/peePeeee/eeeePeee/eeeeePPP/eeReeeKe", "w", "", 48);
+let position4 = new Position("eeeekeee/eeeeeeee/eeeeeeee/PeeeeePe/eeeeePee/eeeePeee/eeeeeeee/eeeeKeee", "w", "", 94);
 module.exports = [position1, position2, position3, position4];

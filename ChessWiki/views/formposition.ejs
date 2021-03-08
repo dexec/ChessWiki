@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stellung anlegen</title>
+    <link href="css/design.css" rel="stylesheet" type="text/css">
+    <link href="css/chessboard.css" rel="stylesheet" type="text/css">
+    <link href="css/formposition.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<%- include("includes/header.ejs") %>
+<%- include("includes/nav.ejs") %>
+<main>
+    <section>
+        <h1>Eigene Stellung anlegen</h1>
+        <p>
+            Hier können Sie eine eigene Stellung anlegen. [...] Danach taucht die Stellung unter "Stellungen" auf.
+        </p>
+    </section>
+    <section>
+        <form>
+            <fieldset id="stringPosition">
+                <table>
+                    <tr>
+                        <td><label for="row8">8</label></td>
+                        <td><input type="text" id="row8" name="row8" maxlength="8" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="row7">7</label></td>
+                        <td><input type="text" id="row7" name="row7" maxlength="8" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="row6">6</label></td>
+                        <td><input type="text" id="row6" name="row6" maxlength="8" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="row5">5</label></td>
+                        <td><input type="text" id="row5" name="row5" maxlength="8" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="row4">4</label></td>
+                        <td><input type="text" id="row4" name="row4" maxlength="8" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="row3">3</label></td>
+                        <td><input type="text" id="row3" name="row3" maxlength="8" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="row2">2</label></td>
+                        <td><input type="text" id="row2" name="row2" maxlength="8" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="row1">1</label></td>
+                        <td><input type="text" id="row1" name="row1" maxlength="8" size="10"></td>
+                    </tr>
+                </table>
+                <div>"k" für King, "q" für Queen, "b" für Bishop, "n" für Knight, "p" für Pawn, "e" für ein leeres Feld
+                    Großer Buchstabe steht für eine weiße Figur, ein kleiner Buchstabe für eine schwarze Figur.
+                </div>
+            </fieldset>
+            <fieldset id="activeColor">
+                <label for="activeColor">Wer ist am Zug</label>
+                <input type="radio" id="black" name="activeColor">
+                <label for="black">Schwarz</label>
+                <input type="radio" id="white" name="activeColor">
+                <label for="white">Weiß</label>
+            </fieldset>
+            <fieldset id="castlingAvailability">
+            <label for="castlingAvailability">Wer kann noch rochieren</label>
+                <input type="radio" id="blackkingside" name="castlingAvailability">
+                <label for="blackkingside">Kurze schwarze Rochade</label>
+                <input type="radio" id="blackqueenside" name="castlingAvailability">
+                <label for="blackqueenside">Lange schwarze Rochade</label>
+                <input type="radio" id="whitekingside" name="castlingAvailability">
+                <label for="whitekingside">Kurze weiße Rochade</label>
+                <input type="radio" id="whitequeenside" name="castlingAvailability">
+                <label for="whitequeenside">Lange weiße Rochade</label>
+            </fieldset>
+        </form>
+    </section>
+</main>
+<%- include("includes/aside.ejs") %>
+<%- include("includes/footer.ejs") %>
+</body>
+</html>

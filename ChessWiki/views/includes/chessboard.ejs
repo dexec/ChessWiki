@@ -1,7 +1,6 @@
-<section>
-    <% let actualString = position.positionString; %>
-    <table>
-        <% for(let i = 8; i >= 1;i--) { %>
+<% let actualString = position.positionString; %>
+<table id="chessboard">
+    <% for(let i = 8; i >= 1;i--) { %>
         <tr>
             <td><%= i %></td>
             <% for(let j = 0;j < 8;j++) { %>
@@ -38,14 +37,13 @@
             <% } %>
             <% actualString = actualString.substring(1); %>
         </tr>
+    <% } %>
+    <tr id="letters">
+        <td></td>
+        <% let tmp = "ABCDEFGH"; %>
+        <% for(let i = 0; i < 8;i++) { %>
+            <td><%= tmp.substr(0, 1) %></td>
+            <% tmp = tmp.substring(1); %>
         <% } %>
-        <tr id="letters">
-            <td></td>
-            <% let tmp = "ABCDEFGH"; %>
-            <% for(let i = 0; i < 8;i++) { %>
-                <td><%= tmp.substr(0, 1) %></td>
-                <% tmp = tmp.substring(1); %>
-            <% } %>
-        </tr>
-    </table>
-</section>
+    </tr>
+</table>

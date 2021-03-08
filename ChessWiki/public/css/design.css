@@ -90,12 +90,12 @@ aside figure section {
     margin: 0;
 }
 
-aside figure td {
+aside figure table#chessboard td {
     width: 21px;
     height: 21px;
 }
 
-aside figure table {
+aside figure table#chessboard {
     margin-top: 0;
     margin-right: 0;
     font-size: medium;

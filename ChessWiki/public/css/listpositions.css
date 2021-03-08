@@ -14,9 +14,11 @@ section {
 #positions a {
     text-decoration: none;
     color: inherit;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-td {
+table#chessboard td {
     width: 21px;
     height: 21px;
 }

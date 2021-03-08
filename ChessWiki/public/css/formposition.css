@@ -1,0 +1,24 @@
+section {
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+form {
+    display:flex;
+    flex-flow: row wrap;
+}
+
+fieldset {
+    width: 500px;
+}
+
+fieldset#stringPosition {
+    display:flex;
+    flex-flow: row nowrap;
+}
+
+fieldset#castlingAvailability {
+    display:flex;
+    flex-flow: column nowrap;
+}
