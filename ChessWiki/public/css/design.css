@@ -86,10 +86,6 @@ aside figure a {
     color: inherit;
 }
 
-aside figure section {
-    margin: 0;
-}
-
 aside figure table#chessboard td {
     width: 21px;
     height: 21px;

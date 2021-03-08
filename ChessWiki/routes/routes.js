@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const positions = require("../models/positions");
 const positionOfTheDay = positions[1];
+const openings = require("../models/openings");
 
 router.get("/", function (req, res) {
     res.render("homepage", {positionOfTheDay: positionOfTheDay});
@@ -33,6 +34,10 @@ router.get("/openings", function (req, res) {
 
 router.get("/formposition", function(req,res) {
     res.render("formposition",{positionOfTheDay: positionOfTheDay})
+});
+
+router.get("/openings/schottische_partie", function (req, res) {
+    res.render("opening", {opening: openings[0], positionOfTheDay: positionOfTheDay});
 });
 
 router.use(function(req, res) {

@@ -12,26 +12,35 @@ h2 {
     text-align: center;
 }
 
+section a {
+    text-decoration: none;
+    color: mediumblue;
+    font-weight: bold;
+}
+
 /* Ab hier für die automatisierte Nummerierung der Eröffnungs-Liste */
-ul {
+li ol {
     list-style-type: none;
 }
 
-.variant {
+ul {
     list-style-type: disc;
 }
 
-ul > li, .firstUl {
+ul > li > ul {
+    list-style-type: circle;
+}
+
+li ol, section > ol > li > ol > li {
     position: relative;
     left: -15px;
 }
 
-.c40 {
+#c40 {
     counter-set: econumber 39;
-    list-style-type: none;
 }
 
-.c40 > li::before {
+#c40 > li::before {
     counter-increment: econumber;
     content: "C"counter(econumber)": ";
 }
