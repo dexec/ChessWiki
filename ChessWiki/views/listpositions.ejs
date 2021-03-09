@@ -32,7 +32,7 @@
         </p>
     </section>
     <section>
-        <h2>Beispielhafte Stellungen</h2>
+        <h2>Stellungen</h2>
         <div id="positions">
             <% for(let i=0;i<positions.length;i++) { %>
             <a href="/positions/position<%=i%>">
@@ -40,9 +40,8 @@
             </a>
             <% } %>
         </div>
-        <h2>Eigene Stellung</h2>
-        <b>Hier können Sie Ihre eigenen Stellungen hinzufügen und analysieren</b>
-        <button>Neue Stellung aufbauen</button>
+        <p>Sie können jede Stellung mit einem Klick analysieren lassen</p>
+        <form action="/formposition"><input type="submit" value="Neue Stellung aufbauen"></form>
     </section>
 </main>
 <%- include("includes/aside.ejs") %>

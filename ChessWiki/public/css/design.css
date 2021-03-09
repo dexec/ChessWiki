@@ -39,14 +39,14 @@ header a span {
 nav {
     grid-area: nav;
     background-color: #45355b;
+    display: flex;
 }
 
 nav a {
     font-size: xx-large;
     text-decoration: none;
     color: white;
-    display: inline-block;
-    width: 25%;
+    flex-basis: 25%;
     text-align: center;
 }
 
@@ -156,5 +156,23 @@ footer a {
     header a span {
         display: inline-block;
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 685px) {
+    body {
+        grid-template-areas:"header main"
+                            "nav main"
+                             "aside main"
+                             "footer footer";
+    }
+    nav {
+        display: flex;
+        flex-flow: column nowrap;
+        border-right: 8px solid;
+        border-color: #2e1b3b;
+    }
+    nav a{
+        width:100%
     }
 }
