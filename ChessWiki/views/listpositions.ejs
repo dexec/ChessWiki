@@ -34,10 +34,12 @@
     <section>
         <h2>Beispielhafte Stellungen</h2>
         <div id="positions">
-            <a href="/positions/position1"><%- include("includes/chessboard.ejs",{position:positions[0]}) %></a>
-            <a href="/positions/position2"><%- include("includes/chessboard.ejs",{position:positions[1]}) %></a>
-            <a href="/positions/position3"><%- include("includes/chessboard.ejs",{position:positions[2]}) %></a>
-            <a href="/positions/position4"><%- include("includes/chessboard.ejs",{position:positions[3]}) %></a>
+            <% for(let i=0;i<positions.length;i++) { %>
+            <% console.log(positions[i]);%>
+            <a href="/positions/position<%=i%>">
+                <%- include("includes/chessboard.ejs",{position:positions[i]})%>
+            </a>
+            <% } %>
         </div>
         <h2>Eigene Stellung</h2>
         <b>Hier können Sie Ihre eigenen Stellungen hinzufügen und analysieren</b>

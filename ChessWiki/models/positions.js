@@ -71,8 +71,19 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
     }
 }
 
-let position1 = new Position("rnbqkenr/ppeeeppp/eepepeee/eeepeeee/ebPPeBee/eeNeeNee/PPeePPPP/ReeQKBeR", "b", "KQkq", 9);
-let position2 = new Position("reeeerke/ppebeppp/eeeepnee/eePqeeee/eepPeBee/PeeePNee/eeQeePPP/ReeeeRKe", "b", "", 29);
-let position3 = new Position("eeereeke/eeeeeppp/eeeBpeee/ebeneeee/peePeeee/eeeePeee/eeeeePPP/eeReeeKe", "w", "", 48);
-let position4 = new Position("eeeekeee/eeeeeeee/eeeeeeee/PeeeeePe/eeeeePee/eeeePeee/eeeeeeee/eeeeKeee", "w", "", 94);
-module.exports = [position1, position2, position3, position4];
+const positionsForPosition = [
+    new Position("rnbqkenr/ppeeeppp/eepepeee/eeepeeee/ebPPeBee/eeNeeNee/PPeePPPP/ReeQKBeR", "b", "KQkq", 9),
+    new Position("reeeerke/ppebeppp/eeeepnee/eePqeeee/eepPeBee/PeeePNee/eeQeePPP/ReeeeRKe", "b", "", 29),
+    new Position("eeereeke/eeeeeppp/eeeBpeee/ebeneeee/peePeeee/eeeePeee/eeeeePPP/eeReeeKe", "w", "", 48),
+    new Position("eeeekeee/eeeeeeee/eeeeeeee/PeeeeePe/eeeeePee/eeeePeee/eeeeeeee/eeeeKeee", "w", "", 94)
+]
+
+const positionsForOpening = [
+
+]
+module.exports = {
+    positionsForPosition: positionsForPosition,
+    positionsForOpening:positionsForOpening,
+    Position: Position
+}
+
