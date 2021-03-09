@@ -6,16 +6,12 @@ const openings = require("../models/openings");
 const dataPositions = require("../models/positions");
 const positionsForPosition = dataPositions.positionsForPosition;
 const positionOfTheDay = positionsForPosition[1];
-const positionsCounter = 4;
 router.use(bodyParser.urlencoded({extended: false}));
 
 function positionRender() {
-    for (let i = 0; i < positionsForPosition.length; i++) {
-        console.log(i);
-        router.get("/positions/position" + i, function (req, res) {
-            res.render("position", {position: positionsForPosition[i], positionOfTheDay: positionOfTheDay});
-        });
-    }
+    router.get("/positions/position:id", function (req, res) {
+        res.render("position", {position: positionsForPosition[req.params.id], positionOfTheDay: positionOfTheDay});
+    });
 }
 
 router.post("/formposition", function (req, res) {
