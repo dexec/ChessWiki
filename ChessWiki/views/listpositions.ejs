@@ -35,7 +35,6 @@
         <h2>Beispielhafte Stellungen</h2>
         <div id="positions">
             <% for(let i=0;i<positions.length;i++) { %>
-            <% console.log(positions[i]);%>
             <a href="/positions/position<%=i%>">
                 <%- include("includes/chessboard.ejs",{position:positions[i]})%>
             </a>
