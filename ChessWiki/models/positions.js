@@ -16,6 +16,9 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
         // Wenn man eine neue Stellung anlegt, wird numberOfMoves als String übergeben und deswegen ist ein parseInt nötig
         return "Das Spiel ist im " + (numberOfMoves + 1) + ". Zug.";
     }
+    this.currentFullMove = function () { // von Alex geschrieben, damit es eine simple und zu Eröffnungen passende Alternative zu numberOfMoves gibt
+        return "Das Spiel nach " + Math.ceil(numberOfMoves / 2) + " Zügen.";
+    }
     this.analysis = function () {
         let numberCountPieces = this.countWhite() - this.countBlack();
         let numberActiveColor = activeColor === "w" ? 0.5 : -0.5;

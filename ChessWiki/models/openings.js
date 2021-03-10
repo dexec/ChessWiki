@@ -34,23 +34,27 @@ function Opening(ecoCat, ecoSubcat, parent, name, variations, moves, desc) {
     }
 
     this.convertToPosition = function (num) {
-        let pos, col;
+        let pos = "rnbqkbnr/pppppppp/eeeeeeee/eeeeeeee/eeeeeeee/eeeeeeee/PPPPPPPP/RNBQKBNR";
         let castl = "KQkq";
+
+        // 'num' (Anzahl der Züge) ist optional, wenn keine Angabe erfolgt wird die gesamte Eröffnung bzw. ihre Länge genommen
+        num = (typeof num === "undefined") ? moves.length : num;
 
         for(let i = 0; i < num; i++) {
             let move = moves[i];
-            if(move.length === 5 && i % 2 === 0) {
+            if(i % 2 === 0) { // Weiß am Zug
+                if(castl.includes("K" && move.match(/^[O0o]-[O0o]$/))) {
+
+                }
+            } else if(i % 2 === 1) { // Schwarz am Zug
 
             }
         }
 
-        // 'num' (Anzahl der Züge) ist optional, wenn keine Angabe erfolgt wird die gesamte Eröffnung bzw. ihre Länge genommen
-        num = (typeof num === "undefined") ? moves.length : num;
         // 'col' (Spieler am Zug) wird anhängig von der Anzahl der in unserem Fall halben Züge definiert
-        col = (num % 2 === 0) ? "w" : "b";
+        const col = (num % 2 === 0) ? "w" : "b";
 
-        //return new dataPosition.Position(pos, col, castl, num);
-        return new dataPosition.Position("rnbqkenr/ppeeeppp/eepepeee/eeepeeee/ebPPeBee/eeNeeNee/PPeePPPP/ReeQKBeR", "b", "KQkq", num);
+        return new dataPosition.Position(pos, col, castl, num);
     }
 }
 
