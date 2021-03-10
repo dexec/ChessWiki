@@ -1,5 +1,26 @@
-main {
+section {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#positions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#positions > div > div {
+    margin-top: 10px;
+}
+
+ol, ul {
+    margin-top: 0.5%;
+}
+
+#desc {
+    width: 50%;
+    text-align: center;
 }

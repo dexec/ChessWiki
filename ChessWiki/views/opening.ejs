@@ -14,23 +14,35 @@
         <main>
             <section>
                 <h1><%= opening.getName(); %></h1>
-                <p><u>ECO-Schlüssel:</u> <%=opening.eco();%></p>
-                <p><u>Beschreibung:</u> <%=opening.getDesc();%></p>
-                <p><u>Geht hervor aus:</u> <%=opening.getParent();%></p>
-                <p><u>Zugabfolge:</u>
-                    <ol>
-                        <% for (let i = 0; i <= opening.getMoves().length / 2; i++) { %>
-                            <li>
-                                <%=opening.getMoves()[i*2];%>
-                                <%=opening.getMoves()[i*2+1];%>
-                            </li>
-                        <% } %>
-                    </ol>
-                </p>
-                <p><u>Anschließende Variationen:</u> <%= opening.getVariations(); %></p>
+                <p><u>ECO-Schlüssel:</u>&ensp;<%=opening.eco();%></p>
+                <p id="desc"><u>Beschreibung:</u><br><%=opening.getDesc();%></p>
+                <p><u>Geht hervor aus:</u>&ensp;<%=opening.getParent();%></p>
+                <u>Zugabfolge:</u>
+                <ol>
+                    <% for (let i = 0; i <= opening.getMoves().length / 2; i++) { %>
+                        <li>
+                            &ensp;<%=opening.getMoves()[i*2];%>&ensp;<%=opening.getMoves()[i*2+1];%>
+                        </li>
+                    <% } %>
+                </ol>
+                <u>Anschließende Variationen:</u>
+                <ul>
+                    <% for(let variation of opening.getVariations()) { %>
+                        <li>
+                            <%=variation%>
+                        </li>
+                    <% } %>
+                </ul>
             </section>
-            <section>
-                
+            <section id="positions">
+                <div>
+                    <%- include("includes/chessboard.ejs", {position: opening.convertToPosition()}) %>
+                    <div><%=opening.convertToPosition().numberOfMoves()%></div>
+                </div>
+                <div>
+                    <%- include("includes/chessboard.ejs", {position: opening.convertToPosition()}) %>
+                    <div><%=opening.convertToPosition().numberOfMoves()%></div>
+                </div>
             </section>
         </main>
         <%- include("includes/aside.ejs") %>

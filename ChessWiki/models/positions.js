@@ -13,12 +13,13 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
         return abgabe;
     }
     this.numberOfMoves = function () {
-        return "Das Spiel ist im " + numberOfMoves + ". Zug.";
+        // Wenn man eine neue Stellung anlegt, wird numberOfMoves als String übergeben und deswegen ist ein parseInt nötig
+        return "Das Spiel ist im " + (numberOfMoves + 1) + ". Zug.";
     }
     this.analysis = function () {
         let numberCountPieces = this.countWhite() - this.countBlack();
         let numberActiveColor = activeColor === "w" ? 0.5 : -0.5;
-        let numberCastlingAvailibility = function () {
+        let numberCastlingAvailability = function () {
             let abgabe = 0;
             if (castlingAvailability.includes("K")) abgabe += 0.5;
             if (castlingAvailability.includes("Q")) abgabe += 0.5;
@@ -26,7 +27,7 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
             if (castlingAvailability.includes("q")) abgabe -= 0.5;
             return abgabe;
         }
-        return "Die Wertung beläuft sich somit auf " + (numberCountPieces + numberActiveColor + numberCastlingAvailibility());
+        return "Die Wertung beläuft sich somit auf " + (numberCountPieces + numberActiveColor + numberCastlingAvailability());
     }
     this.countPieces = function () {
         return "Weiß hat " + this.countWhite() + " Figuren und Schwarz hat " + this.countBlack() + " Figuren.";
