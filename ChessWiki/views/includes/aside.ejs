@@ -1,13 +1,19 @@
+<!--Aside enthält ein Schachbrett, was die Stellung des Tages darstellen soll und eine Werbeanzeige zu einer beliebten Eröffnung. -->
+<!--Die Stellung des Tages wird beim rendern übergeben und über das chessboard-template eingefügt-->
 <aside>
     <figure>
         <h3>Stellung des Tages</h3>
+        <!--Ein Link zur Detailseite der Stellung-->
         <a href="/positions/position2">
+            <!--Einfügen des Schachbretts mit der übergebenen Stellung -->
             <%- include("chessboard.ejs", {position: positionOfTheDay}); %>
         </a>
         <figcaption>
+            <!--Aufrufen einer Position.js-Funktion zum Anzeigen des Zugrechtes-->
             <%=positionOfTheDay.activeColor()%>
         </figcaption>
     </figure>
+    <!--Ein Link zur Detailseite der Eröffnung-->
     <a href="/openings/schottische_partie" id="ad">
         <img alt="Werbung" height="420" width="210" src="/img/werbeanzeige.png">
     </a>

@@ -1,3 +1,6 @@
+<!--Das ist die Seite zum Anlegen einer neuen Stellung. Mit dem Abschicken des Formulars
+taucht die Stellung in der Liste der Stellungen auf.-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +27,9 @@
                 Sie geben die Buchstaben in richtiger Reihenfolge in die Zeieln ein.
             </label>
             <table>
+                <!--Die Tabelle sorgt für eine einhaltliche Darstellung des Brettes.
+                Um es einfach zu halten, werden lediglich die eingegeben Strings zu einem
+                String zusammengefasst, die den positionString der Funktion Position darstellen.-->
                 <tr>
                     <td><label for="row8">8</label></td>
                     <td><input type="text" id="row8" name="row8" minlength="8" maxlength="8" size="10" value="rnbqkbnr"

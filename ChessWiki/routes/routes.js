@@ -49,7 +49,9 @@ router.get("/formposition", function (req, res) {
 router.get("/openings/schottische_partie", function (req, res) {
     res.render("opening", {opening: openings[0], positionOfTheDay: positionOfTheDay});
 });
-
+router.get("/documentation", function (req, res) {
+    res.render("../../doc/documentation", {positionOfTheDay: positionOfTheDay});
+})
 router.use(function (req, res) {
     res.render("404");
 });

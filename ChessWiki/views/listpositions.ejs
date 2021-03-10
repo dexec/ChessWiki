@@ -1,3 +1,6 @@
+<!--Das ist die Liste der Stellungen. Hier gibt es eine Übersicht über vorgegebene Stellungen und alle
+später eingefügten.-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +36,9 @@
     </section>
     <section>
         <h2>Stellungen</h2>
+        <!--Die Stellungen sind eine eigene Flexbox, die als row wrap geflowt ist.
+        Die Stellungen werden beim Rendern mitgeliefert, und für jeder dieser Stellungen
+        wird ein neues Schachbrett erzeugt und mit einem neuen Link versehen.-->
         <div id="positions">
             <% for(let i=0;i<positions.length;i++) { %>
             <a href="/positions/position<%=i%>">
@@ -40,6 +46,7 @@
             </a>
             <% } %>
         </div>
+        <!--Link zum Formular der Stellungen-->
         <p>Sie können jede Stellung mit einem Klick analysieren lassen</p>
         <form action="/formposition"><input type="submit" value="Neue Stellung aufbauen"></form>
     </section>

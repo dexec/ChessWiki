@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Dokumentation</title>
+    <link rel="icon" href="../ChessWiki/public/img/favicon.ico">
+    <link href="css/design.css" type="text/css" rel="stylesheet">
+    <link href="css/chessboard.css" type="text/css" rel="stylesheet">
+    <style>
+        li {
+            font-weight: bold;
+        }
+
+        body > ol {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<%- include("../ChessWiki/views/includes/header.ejs") %>
+<%- include("../ChessWiki/views/includes/nav.ejs") %>
+<main>
+    <ol>
+        <li>Beschreibung des Anwendungsszenarios</li>
+        <li>Fachobjekte der Anwendung</li>
+        <li>Beschreibung und Begründung der Implementierungsentscheidungen</li>
+    </ol>
+    <h2><i>Welche HTML-Seiten sind in der Anwendung enthalten?</i></h2>
+    <p>Das Chesswiki ist unterteilt in HTML-Seiten, die einmalig vorkommen, und HTML-Seiten, die auf mehreren Seiten
+        angezeigt werden.
+        Alle HTML-Seiten wurde als Templates umgesetzt.
+        Die einmaligen Seiten sind jeweils drei Seiten für jedes Fachobjekt, eine 404-Fehlerseite und eine
+        Willkommensseite.
+        Zum Fachobjekt Stellung gehören die Seiten <a href="/positions">"listpositions"</a>, "position" und <a
+                href="formposition">"formposition</a>.
+        Zum Fachobjekt Eröffnung gehören die Seiten <a href="/openings">"listopenings"</a>, "opening" und <a
+                href="formopening">"formopening"</a>.
+        Die wiederverwendbaren Seiten sind "aside","chessboard","footer","header" und "nav". Diese Seiten sind auf fast
+        jeder Seite Bestandteile.
+    </p>
+    <h2><i>Wie kann zwischen den einzelnen HTML-Seiten navigiert werden?</i></h2>
+    <p>Zur Navigation kann die Navigationsleiste verwendet werden.
+        In "listpositions" sind alle Schachbretter ein Link zur jeweiligen Detailseite. Der Button unten führt zum
+        Formular.
+    </p>
+    <h2><i>Falls semantiklose Elemnte eingesetzt wurden: Warum wurden diese eingesetzt?</i></h2>
+    <p>In formposition wurde semantiklose divs verwendet, um zwei HTML-Tags zu einem Kind zu machen, damit sie in der
+        flexbox nebeneinander auftauchen, statt untereinander.</p>
+
+    <h2><i>Wie ist das einheitlichen Layout der Web-Anwendung aufgebaut?</i></h2>
+    <p>Grundsätzlich unterliegt jede Seite der selben Struktur.<br>
+        <img alt="gridlayout" src="img/gridlayout.jpg">
+        Alles in main wird in sinnvolle sections unterteilt.
+    </p>
+    <h2><i>Welche CSS-Layout-Mechanismen wurden eingesetzt und warum?</i></h2>
+    <p>Die Nav ist eine flexbox, damit alles in einer Reihe anzeigt wird.
+        Alles weitere wird dann Seitenspezifisch im main gelayoutet.
+        Im allgemeinen wird main mit flexboxen gelayoutet.
+    </p>
+</main>
+<%- include("../ChessWiki/views/includes/aside.ejs") %>
+<%- include("../ChessWiki/views/includes/footer.ejs") %>
+</body>
+</html>

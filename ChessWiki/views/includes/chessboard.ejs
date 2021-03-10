@@ -1,3 +1,12 @@
+<!--Das Schabrett an sich ist eine große quadratische Tabelle der Größe 9,
+8 Zeilen und Spalten für die Figuren, 1 Zeile und Spalte für die Notation.
+Die Funktion Position in Position.js enthält einen langen String, der alle Figuren, die auf
+dem Brett stehen, enthält. Angefangen wird in der oberen linken Ecke und Zeilenweise abgearbeitet.
+Jeder Buchstabe bedeutet eine Figur, es sind immer 8 Buchstaben, bis ein Slash kommt, dann beginnt eine
+neue Zeile. Für jeden Buchstaben wird geschaut und die passende Figur in Unicode abgebildet.
+Große Buchstaben bedeuten weiße Figuren, kleine Buchstaben schwarze Figuren.
+Über das CSS zum Chessboard werden die Kacheln passend gefärbt-->
+
 <% let actualString = position.positionString; %>
 <table id="chessboard">
     <% for(let i = 8; i >= 1;i--) { %>
