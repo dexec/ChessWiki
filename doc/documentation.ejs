@@ -6,15 +6,7 @@
     <link rel="icon" href="../ChessWiki/public/img/favicon.ico">
     <link href="css/design.css" type="text/css" rel="stylesheet">
     <link href="css/chessboard.css" type="text/css" rel="stylesheet">
-    <style>
-        li {
-            font-weight: bold;
-        }
-
-        body > ol {
-            border: 1px solid black;
-        }
-    </style>
+    <link href="css/documentation.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <%- include("../ChessWiki/views/includes/header.ejs") %>
@@ -57,6 +49,81 @@
         Alles weitere wird dann Seitenspezifisch im main gelayoutet.
         Im allgemeinen wird main mit flexboxen gelayoutet.
     </p>
+    <h2><i>Welche Breakpoints wurden definiert und welche Auswirkungen haben sie auf das Layout?</i></h2>
+    <p>
+
+    </p>
+    <h2><i>Welchem Zweck dienen die diefinierten Breakpoints im konkreten Anwendungsszenario (z.B Zielendgeräte)?</i>
+    </h2>
+    <p>
+
+    </p>
+    <h2><i>Wie und nach welchen Prinzipien wurden die Module der Server-Implementierung strukturiert?</i></h2>
+    <p>
+        Die Serverimplementierung basiert auf dem Web-Framework Express.
+        Die Konfiguration findet in der app.js statt, das Routing in der router.js.
+        In der app.js find folgende Konfigurationen statt:
+        Express wird eingebunden.
+        Das Verzeichnis für die statischen Dateien wird konfiguriert.
+        EJS wird als Template-Engine konfiguriert, danach wird das Verzeichnis festgelegt, in dem EJS die Templates
+        suchen soll.
+        Der Router wird auf der App registriert.
+        Die app soll auf dem Port 8020 lauschen, also ist er unter dieser IP für Clients erreichbar.
+        Im router selber wird noch der body-parser verwendet.
+    </p>
+    <h2><i>Welche HTTp-Anfragen werden durch das Routing des Servers unterstützt?</i></h2>
+    <table id="routing">
+        <tr>
+            <th>URL</th>
+            <th>HTTP-Methode</th>
+            <th>Aktion</th>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td>GET</td>
+            <td>Anzeige der Willkommensseite</td>
+        </tr>
+        <tr>
+            <td>/positions</td>
+            <td>GET</td>
+            <td>Anzeige der Liste der Stellungen</td>
+        </tr>
+        <tr>
+            <td>/positions/positions:id</td>
+            <td>GET</td>
+            <td>Anzeige der Detailsseite zu der jeweiligen Stellung</td>
+        </tr>
+        <tr>
+            <td>/formposition</td>
+            <td>GET</td>
+            <td>Anzeige des Formulars zum Anlegen einer neuen Stellung</td>
+        </tr>
+        <tr>
+            <td>/openings</td>
+            <td>GET</td>
+            <td>Anzeige der Liste der Eröffnungen</td>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>/formopening</td>
+            <td>GET</td>
+            <td>Anzeige des Formulars zum Anlegen einer neuen Eröffnung</td>
+        </tr>
+        <tr>
+            <td>/formposition</td>
+            <td>POST</td>
+            <td>Neuanlage einer Stellung</td>
+        </tr>
+        <tr>
+            <td>/formopening</td>
+            <td>POST</td>
+            <td>Neuanlage einer Eröffnung</td>
+        </tr>
+    </table>
 </main>
 <%- include("../ChessWiki/views/includes/aside.ejs") %>
 <%- include("../ChessWiki/views/includes/footer.ejs") %>

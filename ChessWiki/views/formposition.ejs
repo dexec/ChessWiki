@@ -33,42 +33,42 @@ taucht die Stellung in der Liste der Stellungen auf.-->
                 <tr>
                     <td><label for="row8">8</label></td>
                     <td><input type="text" id="row8" name="row8" minlength="8" maxlength="8" size="10" value="rnbqkbnr"
-                               pattern="[rnbqkeRNBQK]{8}"></td>
+                               pattern="[rnbqkeRNBQK]{8}" required></td>
                 </tr>
                 <tr>
                     <td><label for="row7">7</label></td>
                     <td><input type="text" id="row7" name="row7" minlength="8" maxlength="8" size="10" value="pppppppp"
-                               pattern="[rnbqkpePRNBQK]{8}"></td>
+                               pattern="[rnbqkpePRNBQK]{8}" required></td>
                 </tr>
                 <tr>
                     <td><label for="row6">6</label></td>
                     <td><input type="text" id="row6" name="row6" minlength="8" maxlength="8" size="10" value="eeeeeeee"
-                               pattern="[rnbqkpePRNBQK]{8}"></td>
+                               pattern="[rnbqkpePRNBQK]{8}" required></td>
                 </tr>
                 <tr>
                     <td><label for="row5">5</label></td>
                     <td><input type="text" id="row5" name="row5" minlength="8" maxlength="8" size="10" value="eeeeeeee"
-                               pattern="[rnbqkpePRNBQK]{8}"></td>
+                               pattern="[rnbqkpePRNBQK]{8}" required></td>
                 </tr>
                 <tr>
                     <td><label for="row4">4</label></td>
                     <td><input type="text" id="row4" name="row4" minlength="8" maxlength="8" size="10" value="eeeeeeee"
-                               pattern="[rnbqkpePRNBQK]{8}"></td>
+                               pattern="[rnbqkpePRNBQK]{8}" required></td>
                 </tr>
                 <tr>
                     <td><label for="row3">3</label></td>
                     <td><input type="text" id="row3" name="row3" minlength="8" maxlength="8" size="10" value="eeeeeeee"
-                               pattern="[rnbqkpePRNBQK]{8}"></td>
+                               pattern="[rnbqkpePRNBQK]{8}" required></td>
                 </tr>
                 <tr>
                     <td><label for="row2">2</label></td>
                     <td><input type="text" id="row2" name="row2" minlength="8" maxlength="8" size="10" value="PPPPPPPP"
-                               pattern="[rnbqkpePRNBQK]{8}"></td>
+                               pattern="[rnbqkpePRNBQK]{8}" required></td>
                 </tr>
                 <tr>
                     <td><label for="row1">1</label></td>
                     <td><input type="text" id="row1" name="row1" minlength="8" maxlength="8" size="10" value="RNBQKBNR"
-                               pattern="[rnbqkeRNBQK]{8}"></td>
+                               pattern="[rnbqkeRNBQK]{8}" required></td>
                 </tr>
             </table>
 
@@ -83,7 +83,7 @@ taucht die Stellung in der Liste der Stellungen auf.-->
                 Buchstaben in klein.</label>
             <input type="text" id="castlingAvailability" name="castlingAvailability" maxlength="4" value="KQkq" pattern="[KQkq]{0,4}">
             <label for="numberOfMoves">Wie viele halbe Züge wurden gespielt?</label>
-            <input type="text" id="numberOfMoves" name="numberOfMoves" value="0">
+            <input type="number" id="numberOfMoves" name="numberOfMoves" value="0">
             <div><input type="submit" value="Stellung erstellen"><input type="reset" value="Eingaben zurücksetzen">
             </div>
         </form>

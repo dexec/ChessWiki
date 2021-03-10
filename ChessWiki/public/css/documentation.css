@@ -1,0 +1,19 @@
+li {
+    font-weight: bold;
+}
+
+body > ol {
+    border: 1px solid black;
+}
+
+table#routing {
+    border-collapse: collapse;
+}
+
+table#routing td, table#routing th {
+    border: solid 1px;
+}
+
+table#routing th {
+    border-bottom: solid 2px;
+}
