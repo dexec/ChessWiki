@@ -6,14 +6,14 @@ body > ol {
     border: 1px solid black;
 }
 
-table#routing {
+table.documentation {
     border-collapse: collapse;
 }
 
-table#routing td, table#routing th {
+table.documentation td, table.documentation th {
     border: solid 1px;
 }
 
-table#routing th {
+table.documentation th {
     border-bottom: solid 2px;
 }

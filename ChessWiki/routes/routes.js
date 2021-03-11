@@ -28,7 +28,7 @@ router.get("/positions", function (req, res) {
     res.render("listpositions", {positions: positionsForPosition, positionOfTheDay: positionOfTheDay});
 });
 
-router.get("/positions/position:id", function (req, res) {
+router.get("/positions/analyse/position:id", function (req, res) {
     req.params.id > positionsForPosition.length - 1 ? res.render("404") :
         res.render("position", {position: positionsForPosition[req.params.id], positionOfTheDay: positionOfTheDay});
 });

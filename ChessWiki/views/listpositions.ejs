@@ -41,7 +41,7 @@ später eingefügten.-->
         wird ein neues Schachbrett erzeugt und mit einem neuen Link versehen.-->
         <div id="positions">
             <% for(let i=0;i<positions.length;i++) { %>
-            <a href="/positions/position<%=i%>">
+            <a href="/positions/analyse/position<%=i%>">
                 <%- include("includes/chessboard.ejs",{position:positions[i]})%>
             </a>
             <% } %>
