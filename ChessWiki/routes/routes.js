@@ -29,10 +29,15 @@ router.get("/positions", function (req, res) {
 });
 
 router.get("/positions/position:id", function (req, res) {
-    req.params.id>positionsForPosition.length-1 ? res.render("404") :
+    req.params.id > positionsForPosition.length - 1 ? res.render("404") :
         res.render("position", {position: positionsForPosition[req.params.id], positionOfTheDay: positionOfTheDay});
 });
-
+router.get("/openings/analyse/:id", function (req, res) {
+    let openingName = req.params.id.substr(0, req.params.id.length - 1);
+    let moveNumber = req.params.id.substring(req.params.id.length - 1);
+    const newPosition = openings.filter(opening => opening.name === openingName)[0].convertToPosition(moveNumber);
+    res.render("position", {position: newPosition, positionOfTheDay: positionOfTheDay});
+});
 router.get("/formposition", function (req, res) {
     res.render("formposition", {positionOfTheDay: positionOfTheDay})
 });

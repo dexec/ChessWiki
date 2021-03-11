@@ -36,11 +36,15 @@
             </section>
             <section id="positions">
                 <div>
+                    <a href="/openings/analyse/<%=opening.name%><%=opening.getMoves().length/2%>">
                     <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.getMoves().length/2)}) %>
+                    </a>
                     <div><%=opening.convertToPosition(opening.getMoves().length/2).currentFullMove()%></div>
                 </div>
                 <div>
+                    <a href="/openings/analyse/<%=opening.name%><%=opening.getMoves().length%>">
                     <%- include("includes/chessboard.ejs", {position: opening.convertToPosition()}) %>
+                    </a>
                     <div><%=opening.convertToPosition().currentFullMove()%></div>
                 </div>
             </section>

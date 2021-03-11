@@ -1,12 +1,11 @@
 const position = require("../../models/positions");
+const openings = require("../../models/openings");
+const dataOpenings = openings.openings;
 
-function Test(a, b, number) {
-    this.a = a;
-    this.b = b;
-    this.number = function() {
-        return a+b;
-    }
-}
-
-let test = new Test(1,2,3);
-console.log(test.number());
+const newArray = openings.openings.map(opening => {
+    return opening.name;
+})
+console.log(dataOpenings.filter(opening => opening.name==='Schottische Partie')[0]);
+const newArray2 = openings.openings.filter(opening => {
+    return opening.name === 'Schottische Partie'
+})[0];
