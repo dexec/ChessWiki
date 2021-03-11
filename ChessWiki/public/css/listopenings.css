@@ -7,7 +7,7 @@ main {
 #intro {
     display: flex;
     flex-flow: column nowrap;
-    align-content: center;
+    align-items: center;
 }
 
 #list {
@@ -49,4 +49,10 @@ li ol, section > ol > li > ol > li {
 #c40 > li::before {
     counter-increment: econumber;
     content: "C"counter(econumber)": ";
+}
+
+@media screen and (max-width: 990px) {
+    main {
+        flex-flow: column nowrap;
+    }
 }

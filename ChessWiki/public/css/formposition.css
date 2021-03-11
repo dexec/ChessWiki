@@ -1,5 +1,5 @@
-section,form {
-    display:flex;
+section, form {
+    display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }

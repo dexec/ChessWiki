@@ -12,7 +12,48 @@
         <%- include("includes/header.ejs") %>
         <%- include("includes/nav.ejs") %>
         <main>
-
+            <section>
+                <h1>Neue Eröffnung anlegen</h1>
+                <p>Hier können Sie eine neue Eröffnung anlegen. Anschließend taucht diese unter "Eröffnungen" auf.</p>
+                <p><b>Benutzen Sie bitte folgendes Format:<br>Figur (kann bei Bauern ausgelassen werden, sonst K für König/King, Q für Dame/Queen, R für Turm/Rook, B für Läufer/Bishop, N für Springer/Knight), Ursprungsfeld, Bindestrich bei normalem Zug oder "x" bei Schlagen, Zielfeld. Für kurze Rochade 0-0, lange Rochade 0-0-0.<br>Beispiele: e2-e4, Ng1-f3, 0-0-0</b></p>
+            </section>
+            <section>
+                <form action="formopening" method="POST">
+                    <p>
+                        <label for="name">Bezeichnung der Eröffnung&ensp;</label>
+                        <input name="name" id="name" type="text" size="30">
+                    </p>
+                    <p><label for="ecoCat">Kategorie des ECO-Schlüssels&ensp;</label>
+                        <select name="ecoCat" id="ecoCat">
+                            <option value="A">A - Unregelmäßige Eröffnungen, teilweise geschlossene Eröffnungen</option>
+                            <option value="B">B - Halboffene Eröffnungen (außer Französisch)</option>
+                            <option value="C">C - Offene Eröffnungen, Französisch</option>
+                            <option value="D">D - Geschlossene Eröffnungen, die nicht unter A und E fallen</option>
+                            <option value="E">E - Geschlossene Eröffnungen</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="ecoSubcat">Unterkategorie des ECO-Schlüssels&ensp;</label>
+                        <input name="ecoSubcat" id="ecoSubcat" type="number" min="0" max="99" value="0">
+                    </p>
+                    <p>
+                        <label for="parent">Vorgänger-/Eltern-Eröffnung&ensp;</label>
+                        <input name="parent" id="parent" type="text" size="30">
+                    </p>
+                    <p>
+                        <label for="desc">Beschreibung&ensp;</label>
+                        <textarea name="desc" id="desc" cols="100" rows="5"></textarea>
+                    </p>
+                    <label>Zugabfolge</label>
+                    <table>
+                        <tr>
+                            <td><label for="zug1">1.&ensp;</label></td>
+                            <td><input name="zug1w" id="zug1" type="text" size="5"></td>
+                            <td><input name="zug1b" id="zug1" type="text" size="5"></td>
+                        </tr>
+                    </table>
+                </form>
+            </section>
         </main>
         <%- include("includes/aside.ejs") %>
         <%- include("includes/footer.ejs") %>
