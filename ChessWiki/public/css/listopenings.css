@@ -4,6 +4,12 @@ main {
     justify-content: space-around;
 }
 
+#intro {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+}
+
 #list {
     flex: 0 0 auto;
 }
@@ -18,7 +24,7 @@ section a {
     font-weight: bold;
 }
 
-/* Ab hier für die automatisierte Nummerierung der Eröffnungs-Liste */
+/* Ab hier für die Nummerierung der Eröffnungs-Liste */
 li ol {
     list-style-type: none;
 }
