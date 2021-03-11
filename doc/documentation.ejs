@@ -90,7 +90,7 @@
             <td>Anzeige der Liste der Stellungen</td>
         </tr>
         <tr>
-            <td>/positions/positions:id</td>
+            <td>/positions/analyse/positions:id</td>
             <td>GET</td>
             <td>Anzeige der Detailsseite zu der jeweiligen Stellung</td>
         </tr>
@@ -105,9 +105,19 @@
             <td>Anzeige der Liste der Eröffnungen</td>
         </tr>
         <tr>
-            <td>/openings/analayse/:id</td>
+            <td>/openings/schottische_partie</td>
             <td>GET</td>
-            <td>Anzeige einer Detailseite zu der jeweiligen Stellung</td>
+            <td>Anzeige der persistenten "Schottische Partie" Eröffnung</td>
+        </tr>
+        <tr>
+            <td>/openings/schottische_partie/:name</td>
+            <td>GET</td>
+            <td>Anzeige einer Detailseite zu einer Variante der "Schottischen Partie"</td>
+        </tr>
+        <tr>
+            <td>/openings/analyse/:id</td>
+            <td>GET</td>
+            <td>Anzeige der Detailseite zu einer Stellung der Eröffnung</td>
         </tr>
         <tr>
             <td>/formopening</td>
@@ -168,6 +178,7 @@
                     <li>views/homepage.ejs</li>
                     <li>views/listopenings.ejs</li>
                     <li>views/opening.ejs</li>
+                    <li>views/formposition.ejs</li>
                 </ul>
             </td>
         </tr>

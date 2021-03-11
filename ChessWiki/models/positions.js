@@ -113,19 +113,15 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
     }
 }
 
-const positionsForPosition = [
+const positions = [
     new Position("rnbqkenr/ppeeeppp/eepepeee/eeepeeee/ebPPeBee/eeNeeNee/PPeePPPP/ReeQKBeR", "b", "KQkq", 9),
     new Position("reeeerke/ppebeppp/eeeepnee/eePqeeee/eepPeBee/PeeePNee/eeQeePPP/ReeeeRKe", "b", "", 29),
     new Position("eeereeke/eeeeeppp/eeeBpeee/ebeneeee/peePeeee/eeeePeee/eeeeePPP/eeReeeKe", "w", "", 48),
     new Position("eeeekeee/eeeeeeee/eeeeeeee/PeeeeePe/eeeeePee/eeeePeee/eeeeeeee/eeeeKeee", "w", "", 94)
 ]
 
-const positionsForOpening = [
-
-]
 module.exports = {
-    positionsForPosition: positionsForPosition,
-    positionsForOpening:positionsForOpening,
+    positions : positions,
     Position: Position
 }
 

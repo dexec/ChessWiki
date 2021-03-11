@@ -51,11 +51,35 @@
                             <td><input name="zug1w" id="zug1" type="text" size="5"></td>
                             <td><input name="zug1b" id="zug1" type="text" size="5"></td>
                         </tr>
+                        <tr>
+                            <td><label for="zug2">2.&ensp;</label></td>
+                            <td><input name="zug2w" id="zug2" type="text" size="5"></td>
+                            <td><input name="zug2b" id="zug2" type="text" size="5"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="zug3">3.&ensp;</label></td>
+                            <td><input name="zug3w" id="zug3" type="text" size="5"></td>
+                            <td><input name="zug3b" id="zug3" type="text" size="5"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="zug4">4.&ensp;</label></td>
+                            <td><input name="zug4w" id="zug4" type="text" size="5"></td>
+                            <td><input name="zug4b" id="zug4" type="text" size="5"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="zug5">5.&ensp;</label></td>
+                            <td><input name="zug5w" id="zug5" type="text" size="5"></td>
+                            <td><input name="zug5b" id="zug5" type="text" size="5"></td>
+                        </tr>
                     </table>
+                    <button type="button" onclick="createTable()">Neue Zeile</button>
+                    <input type="submit" value="Abschicken!">
                 </form>
+
             </section>
         </main>
         <%- include("includes/aside.ejs") %>
         <%- include("includes/footer.ejs") %>
+    <script src="/js/formopeningtable.js"></script>
     </body>
 </html>

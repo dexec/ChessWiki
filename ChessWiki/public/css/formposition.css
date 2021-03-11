@@ -4,6 +4,6 @@ section, form {
     align-items: center;
 }
 
-label {
+label,p,div {
     text-align: center;
 }
