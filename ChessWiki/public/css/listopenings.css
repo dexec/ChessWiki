@@ -33,7 +33,7 @@ ul > li > ul {
 
 li ol, section > ol > li > ol > li {
     position: relative;
-    left: -15px;
+    right: 15px;
 }
 
 #c40 {

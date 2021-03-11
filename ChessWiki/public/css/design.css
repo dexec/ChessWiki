@@ -1,6 +1,6 @@
 /*Alexander Gromov Anfang*/
 html, body {
-    height: 100%; /* Damit der ganze Platz eingenommen wird und der Footer so immer ganz unten angezeigt wird (siehe grid-template-rows in #maincontainer) */
+    min-height: 100%; /* Damit der ganze Platz eingenommen wird und der Footer so immer ganz unten angezeigt wird (siehe grid-template-rows in #maincontainer) */
 }
 
 body {
@@ -108,18 +108,13 @@ aside figure figcaption {
     text-align: center;
 }
 
-aside figure img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5px;
-    border: 5px solid #45355b;
-}
-
 #ad img {
     display: block;
     border: 1px solid black;
-    margin: 14px;
+    /*margin: 14px;*/
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
@@ -130,13 +125,13 @@ footer {
     bottom: 0;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-top: 25px;
 }
 
 footer a {
     color: mintcream;
 }
 
-/* TODO: Media Queries anpassen */
 @media screen and (max-width: 1308px) {
     nav a {
         font-size: x-large;

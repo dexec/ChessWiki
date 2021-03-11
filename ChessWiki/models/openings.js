@@ -2,35 +2,18 @@ const dataPosition = require("./positions");
 
 function Opening(ecoCat, ecoSubcat, parent, name, variations, moves, desc) {
 
-    this.ecoCat = ecoCat;
-    this.ecoSubcat = ecoSubcat;
-    this.parent = parent;
     this.name = name;
-    this.moves = moves;
     this.desc = desc;
+    this.parent = parent;
+    this.getMoves = moves;
+    this.getVariations = variations;
 
     this.eco = function() {
         return ecoCat + ecoSubcat;
     };
 
-    this.getName = function () {
-        return name;
-    }
-
-    this.getDesc = function () {
-        return desc;
-    }
-
-    this.getParent = function () {
-        return parent;
-    }
-
-    this.getMoves = function () {
-        return moves;
-    }
-
-    this.getVariations = function () {
-        return variations;
+    this.convertNameToURL = function () {
+        return name.replace(" ", "_").toLowerCase();
     }
 
     this.convertToPosition = function (num) {
@@ -130,10 +113,11 @@ function Opening(ecoCat, ecoSubcat, parent, name, variations, moves, desc) {
 }
 
 const openings = [
-    new Opening("C", 45, "Königsspringerspiel", "Schottische Partie",  ["Hauptvariante", "Schottisches Gambit"], ["e2-e4","e7-e5","Ng1-f3","Nb8-c6","d2-d4", "e5xd4"], "Die Schottische Partie ist eine offene Eröffnung und entwickelt sich aus dem Königsspringerspiel, manchmal auch aus dem Mittelgambit. Die Eröffnung hat neben ihrer Hauptvariante nur wenige Nebenvarianten und Gambits, weswegen man die Theorie schnell erlernen kann und die Eröffnung nur in ECO-Nummer C45 vorzufinden ist."),
-    new Opening("C", 45, "Schottische Partie", "Hauptvariante",  ["Hauptvariante", "Schmidt-Variante", "Steinitz-Variante"], ["e2-e4","e7-e5","Ng1-f3","Nb8-c6","d2-d4", "e5xd4","Sf3xd4"], "Die Schottische Partie ist eine offene Eröffnung und entwickelt sich aus dem Königsspringerspiel, manchmal auch aus dem Mittelgambit. Die Eröffnung hat neben ihrer Hauptvariante nur wenige Nebenvarianten und Gambits, weswegen man die Theorie schnell erlernen kann und die Eröffnung nur in ECO-Nummer C45 vorzufinden ist."),
-    new Opening("C", 45, "Hauptvariante", "Hauptvariante",  [], ["e2-e4","e7-e5","Ng1-f3","Nb8-c6","d2-d4","e5xd4","Sf3xd4","Bf8-c5"], "Die Schottische Partie ist eine offene Eröffnung und entwickelt sich aus dem Königsspringerspiel, manchmal auch aus dem Mittelgambit. Die Eröffnung hat neben ihrer Hauptvariante nur wenige Nebenvarianten und Gambits, weswegen man die Theorie schnell erlernen kann und die Eröffnung nur in ECO-Nummer C45 vorzufinden ist."),
-    new Opening("C", 45, "Schottische Partie", "Schottisches Gambit",  [], ["e2-e4","e7-e5","Ng1-f3","Nb8-c6","d2-d4","e5xd4","Bf1-c4"], "Die Schottische Partie ist eine offene Eröffnung und entwickelt sich aus dem Königsspringerspiel, manchmal auch aus dem Mittelgambit. Die Eröffnung hat neben ihrer Hauptvariante nur wenige Nebenvarianten und Gambits, weswegen man die Theorie schnell erlernen kann und die Eröffnung nur in ECO-Nummer C45 vorzufinden ist.")
+    new Opening("C", 45, "Königsspringerspiel", "Schottische Partie",  ["Hauptvariante", "Schmidt-Variante", "Steinitz-Variante", "Schottisches Gambit"], ["e2-e4","e7-e5","Ng1-f3","Nb8-c6","d2-d4", "e5xd4"], "Die Schottische Partie ist eine offene Eröffnung und entwickelt sich aus dem Königsspringerspiel, manchmal auch aus dem Mittelgambit. Die Eröffnung hat neben ihrer Hauptvariante nur wenige Nebenvarianten und Gambits, weswegen man die Theorie schnell erlernen kann und die Eröffnung nur in ECO-Nummer C45 vorzufinden ist."),
+    //new Opening("C", 45, "Schottische Partie", "Hauptvariante",  ["Hauptvariante", "Schmidt-Variante", "Steinitz-Variante"], ["e2-e4","e7-e5","Ng1-f3","Nb8-c6","d2-d4", "e5xd4","Nf3xd4"], "Die Schottische Partie ist eine offene Eröffnung und entwickelt sich aus dem Königsspringerspiel, manchmal auch aus dem Mittelgambit. Die Eröffnung hat neben ihrer Hauptvariante nur wenige Nebenvarianten und Gambits, weswegen man die Theorie schnell erlernen kann und die Eröffnung nur in ECO-Nummer C45 vorzufinden ist."),
+    new Opening("C", 45, "Hauptvariante", "Hauptvariante",  [], ["e2-e4","e7-e5","Ng1-f3","Nb8-c6","d2-d4","e5xd4","Nf3xd4","Bf8-c5","Bc1-e3","Qd8-f6","c2-c3","Ng8-e7"], "Die Schottische Partie ist eine offene Eröffnung und entwickelt sich aus dem Königsspringerspiel, manchmal auch aus dem Mittelgambit. Die Eröffnung hat neben ihrer Hauptvariante nur wenige Nebenvarianten und Gambits, weswegen man die Theorie schnell erlernen kann und die Eröffnung nur in ECO-Nummer C45 vorzufinden ist."),
+    new Opening("C", 45, "Hauptvariante", "Schmidt-Variante",  [], ["e2-e4","e7-e5","Ng1-f3","Nb8-c6","d2-d4","e5xd4","Nf3xd4","Ng8-f6"], "Die Schottische Partie ist eine offene Eröffnung und entwickelt sich aus dem Königsspringerspiel, manchmal auch aus dem Mittelgambit. Die Eröffnung hat neben ihrer Hauptvariante nur wenige Nebenvarianten und Gambits, weswegen man die Theorie schnell erlernen kann und die Eröffnung nur in ECO-Nummer C45 vorzufinden ist."),
+    new Opening("C", 45, "Schottische Partie", "Schottisches Gambit",  [], ["e2-e4","e7-e5","Ng1-f3","Nb8-c6","d2-d4","e5xd4","Bf1-c4"], "Die Schottische Partie ist eine offene Eröffnung und entwickelt sich aus dem Königsspringerspiel, manchmal auch aus dem Mittelgambit. Die Eröffnung hat neben ihrer Hauptvariante nur wenige Nebenvarianten und Gambits, weswegen man die Theorie schnell erlernen kann und die Eröffnung nur in ECO-Nummer C45 vorzufinden ist. Das Schottische Gambit ist eine Abwandlung, in der man vorerst einen Bauern für einen Entwicklungsvorteil opfert.")
 ]
 
 module.exports = {

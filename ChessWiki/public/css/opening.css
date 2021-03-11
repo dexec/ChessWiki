@@ -8,12 +8,18 @@ section {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    margin-top: 30px;
     text-align: center;
+}
+
+#positions > div {
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 #positions > div > div {
     margin-top: 10px;
+    position: relative;
+    left: 10px;
 }
 
 ol, ul {
@@ -25,7 +31,7 @@ ol, ul {
     text-align: center;
 }
 
-div a{
+div a {
     text-decoration: none;
     color: inherit;
 }

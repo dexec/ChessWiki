@@ -17,7 +17,7 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
         return "Das Spiel ist im halben " + (numberOfMoves + 1) + ". Zug.";
     }
     this.currentFullMove = function () { // von Alex geschrieben, damit es eine simple und zu Eröffnungen passende Alternative zu numberOfMoves gibt
-        return "Das Spiel nach halben " + Math.ceil(numberOfMoves / 2) + " Zügen.";
+        return "Das Spiel nach " + Math.ceil(numberOfMoves / 2) + " ganzen Zügen.";
     }
     this.analysis = function () {
         let numberActiveColor = activeColor === "w" ? 0.2 : -0.2;
@@ -120,10 +120,12 @@ const positionsForPosition = [
     new Position("eeeekeee/eeeeeeee/eeeeeeee/PeeeeePe/eeeeePee/eeeePeee/eeeeeeee/eeeeKeee", "w", "", 94)
 ]
 
-const positionsForOpening = []
+const positionsForOpening = [
+
+]
 module.exports = {
     positionsForPosition: positionsForPosition,
-    positionsForOpening: positionsForOpening,
+    positionsForOpening:positionsForOpening,
     Position: Position
 }
 
