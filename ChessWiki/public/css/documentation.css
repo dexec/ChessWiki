@@ -7,8 +7,14 @@ li {
     font-weight: bold;
 }
 
-body > ol {
-    border: 1px solid black;
+ol {
+    counter-reset: index;
+    list-style-type: none;
+}
+
+li::before {
+    counter-increment: index;
+    content: counters(index, ".")". ";
 }
 
 table.documentation {
