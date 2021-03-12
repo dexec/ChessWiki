@@ -3,18 +3,29 @@ main {
     margin-right: 20px;
 }
 
-li,h1 {
-    font-weight: bold;
-}
-
 ol {
     counter-reset: index;
     list-style-type: none;
 }
 
-li::before {
+ol > li::before {
     counter-increment: index;
     content: counters(index, ".")". ";
+}
+
+ol > li {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+ol li p, ol li span, ol li table.documentation {
+    font-size: medium;
+    font-weight: normal;
+}
+
+ol li h4 {
+    font-size: x-large;
+    font-weight: bold;
 }
 
 table.documentation {
@@ -27,4 +38,12 @@ table.documentation td, table.documentation th {
 
 table.documentation th {
     border-bottom: solid 2px;
+}
+
+table.documentation td, table.documentation th {
+    padding-left: 10px;
+}
+
+table.documentation {
+    margin-bottom: 20px;
 }

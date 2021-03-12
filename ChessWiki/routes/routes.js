@@ -16,12 +16,18 @@ const positionOfTheDay = positions[1];
 
 router.use(bodyParser.urlencoded({extended: false}));
 
+
+
 router.get("/", function (req, res) {
     res.render("homepage", {positionOfTheDay: positionOfTheDay});
 });
 
-router.get("/openings", function (req, res) {
-    res.render("listopenings", {openings: openings, positionOfTheDay: positionOfTheDay});
+router.get("/openings/analyse/:id", function (req, res) {
+    let index = req.params.id.lastIndexOf("_move");
+    let openingName = req.params.id.substring(0, index);
+    let moveNumber = req.params.id.substr(index + 5);
+    const newPosition = openings.filter(opening => opening.convertNameToURL() === openingName)[0].convertToPosition(parseInt(moveNumber));
+    res.render("position", {position: newPosition, positionOfTheDay: positionOfTheDay});
 });
 
 router.get("/openings/:name", function (req, res) {
@@ -40,11 +46,8 @@ router.get("/openings/:name/:subname", function (req, res) {
     }
 });
 
-router.get("/openings/analyse/:id", function (req, res) {
-    let openingName = req.params.id.substr(0, req.params.id.length - 1);
-    let moveNumber = req.params.id.substring(req.params.id.length - 1);
-    const newPosition = openings.filter(opening => opening.convertNameToURL() === openingName)[0].convertToPosition(parseInt(moveNumber));
-    res.render("position", {position: newPosition, positionOfTheDay: positionOfTheDay});
+router.get("/openings", function (req, res) {
+    res.render("listopenings", {openings: openings, positionOfTheDay: positionOfTheDay});
 });
 
 router.get("/formopening", function (req, res) {
@@ -105,6 +108,7 @@ router.get("/positions/analyse/position:id", function (req, res) {
 router.get("/formposition", function (req, res) {
     res.render("formposition", {positionOfTheDay: positionOfTheDay})
 });
+
 router.post("/formposition", function (req, res) {
     const positionString = req.body.row8 + "/" + req.body.row7 + "/" + req.body.row6 + "/" + req.body.row5 + "/" + req.body.row4 + "/" + req.body.row3 + "/" + req.body.row2 + "/" + req.body.row1;
     const activeColor = req.body.activeColor;

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Dokumentation</title>
+    <link href="../ChessWiki/public/img/favicon.ico" rel="icon">
+    <link href="../ChessWiki/public/css/documentation.css" rel="stylesheet" type="text/css">
+</head>
+    <body>
+        <main>
+            <h1 style="color: crimson">Für eine bessere User-Experience öffnen Sie die Dokumentation über den Footer der Anwendung!</h1>
+            <ol>
+                <li>Beschreibung des Anwendungsszenarios (Daniel Ackermann & Alexander Gromov)
+                    <p>
+                        Das ChessWiki lässt Eröffnungen und Schachstellungen abbilden, Details ausgeben und neue anlegen.<br>
+                        <u>Stellung (Daniel Ackermann):</u>
+                        In einem Schachspiel, bestehend aus 16 Figuren und 64 Feldern, kann es zu diversen Stellungen kommen.
+                        Jede Stellung hat eine gewisse Bewertung, auch Analyse genannt. Im ChessWiki kann man jede denkliche
+                        Stellung abbilden und analysieren lassen.<br>
+                        <u>Eröffnung (Alexander Gromov):</u>
+                        Jedes Schachspiel beginnt mit einer Eröffnung, welche ungefähr die ersten 10-20 Züge umfasst.
+                        Im ChessWiki kann man sich Eröffnungen, deren Zugfolge und weitere Details anschauen und neue Eröffnung anlegen.
+                        Zu jeder Eröffnung werden anschließend Stellungen angezeigt.
+                    </p>
+                </li>
+                <li>Fachobjekte der Anwendung (Daniel Ackermann & Alexander Gromov)
+                    <h4><i>Textuelle Darstellung, ggf. ergänzt um ein UML-Klassendiagramm: Welche Fachobjekte
+                        sind in der Anwendung enthalten? Welche Attribute und Beziehungen besitzen die Fachobjekte?</i></h4>
+                    <img alt="UML Class" src="../ChessWiki/public/img/classweb.jpg"> <span>(Daniel Ackermann)</span>
+                    <p>
+                        Die enthaltenen Fachobjekte sind <b>Eröffnung</b> und <b>Stellung</b>. Eine Eröffnung kann in einem beliebigen Zug zu einer Stellung umgewandelt und entsprechend dargestellt werden kann.<br><br>
+                        Das Fachobjekt <b>Eröffnung</b> besitzt folgende Attribute (Alexander Gromov): <br>
+                        <u><i>ecoCat</i></u>: Bezeichnet die Kategorie der Eröffnung dem ECO-Schlüssel entsprechend, sollte zwischen A und E liegen<br>
+                        <u><i>ecoSubat</i></u>: Bezeichnet die Unterkategorie der Eröffnung dem ECO-Schlüssel entsprechend, sollte zwischen 0 und 99 liegen<br>
+                        <u><i>parent</i></u>: Bezeichnet die Eltern-Eröffnung, also aus welcher Eröffnung die eigentliche Eröffnungs-Instanz herausgeht<br>
+                        <u><i>name</i></u>: Bezeichnet den Namen der Eröffnung<br>
+                        <u><i>variations</i></u>: Ein Array, welches alle möglichen Fortsetzungen/Variationen beinhaltet<br>
+                        <u><i>moves</i></u>: Ein Array, welches die Züge der Eröffnungsinstanz beinhaltet<br>
+                        <u><i>desc</i></u>: Beschreibung der Eröffnung<br><br>
+                        Das Fachobjekt <b>Stellung</b> besitzt folgende Attribute (Daniel Ackermann): <br>
+                        <u><i>positionString</i></u>: Die Gesamtdarstellung wird mit einen String dargestellt<br>
+                        <u><i>activeColor</i></u>: Gibt an, wer das Zugrecht hat<br>
+                        <u><i>castlingAvailability</i></u>: Bezeichnet, wer noch und in welche Richtung rochieren kann<br>
+                        <u><i>numberOfMoves</i></u>: Anzahl an halben Zügen, die schon gespielt wurden
+                    </p>
+                </li>
+                <li>Beschreibung und Begründung der Implementierungsentscheidungen (Daniel Ackermann & Alexander Gromov)
+                    <ol>
+                        <li>Client
+                            <ol>
+                                <li>Strukturierung der HTML-Seiten
+                                    <h4><i>Welche HTML-Seiten sind in der Anwendung enthalten? (Daniel Ackermann)</i></h4>
+                                    <p>Das Chesswiki ist unterteilt in HTML-Seiten, die einmalig vorkommen, und HTML-Seiten, die auf mehreren Seiten
+                                        angezeigt werden.
+                                        Alle HTML-Seiten wurden als Templates umgesetzt.
+                                        Die einmaligen Seiten sind jeweils drei Seiten für jedes Fachobjekt, eine 404-Fehlerseite und eine
+                                        Homepage.
+                                        Zum Fachobjekt Stellung gehören die Seiten "listpositions", "position" und "formposition".
+                                        Zum Fachobjekt Eröffnung gehören die Seiten "listopenings", "opening" und "formopening".
+                                        Die wiederverwendbaren Seiten sind "aside", "chessboard", "footer", "header" und "nav". Diese Seiten sind Bestandteil von fast jeder Seite.
+                                    </p>
+                                    <h4><i>Wie kann zwischen den einzelnen HTML-Seiten navigiert werden? (Daniel Ackermann)</i></h4>
+                                    <p>
+                                        Zur Navigation kann die Navigationsleiste verwendet werden.<br>
+                                        In "listpositions" sind alle Schachbretter ein Link zur jeweiligen Detailseite. Der Button unten führt zum Formular zum Anlegen einer neuen Stellung.<br>
+                                        In "listopenings" sind alle blau markierten Eröffnungen Links zur jeweiligen Detailseite. Der Button unter der Einführung führt zum Formular zum Anlegen einer neuen Eröffnung.<br>
+                                        In jedem "opening" kann man auf die Stellungen klicken, welche zur Detailseite der jeweiligen Stellung führen.<br>
+                                        Nach Anlegen einer neuen Stellung oder Eröffnung wird man zur Liste der jeweiligen Objekte weitergeleitet.
+                                    </p>
+                                    <h4><i>Falls semantiklose Elemente eingesetzt wurden: Warum wurden diese eingesetzt? (Alexander Gromov)</i></h4>
+                                    <p>
+                                        Im Header wird ein verstecktes span-Element benutzt, welches "ChessWiki" enthält und nur angezeigt wird, wenn die jeweilige Media Query aktiviert wird.<br>
+                                        In formposition wurden semantiklose divs verwendet, um zwei HTML-Tags zu einem Kind zu machen, damit sie in der Flexbox nebeneinander auftauchen, statt untereinander.<br>
+                                        In listpositions wird ein div-Element der Klasse "positions" benutzt, um die mitgelieferten Stellungen layouten zu können.<br>
+                                        In der Detailseite zu einer Eröffnung werden die zu dieser abgebildeten Stellungen jeweils in div-Elemente gepackt, welche Stellung und Unterschrift beinhalten.
+                                        Jede dieser Unterschriften wird auch in ein div-Element verpackt, damit sie eine margin hat und man sie manuell zentrieren kann.
+                                    </p>
+                                </li>
+                                <li>Layout
+                                    <h4><i>Wie ist das einheitliche Layout der Web-Anwendung aufgebaut? (Daniel Ackermann)</i></h4>
+                                    <p>Grundsätzlich unterliegt jede Seite der selben Struktur und wird in <i>design.css</i> festgelegt:</p>
+                                    <img alt="gridlayout" src="../ChessWiki/public/img/gridlayout.jpg">
+                                    <p>
+                                        Es gibt einen Header, der das Logo beinhaltet und zur Homepage führt. Daneben gibt es eine Nav, welche eine Navigierbarkeit ermöglicht.
+                                        Links gibt es ein Aside, welches die "Stellung des Tages" und eine sehr originelle Werbeanzeige enthält. Unten gibt es einen Footer mit unseren Namen und einem Link zu dieser Dokumentation.
+                                        Alles in Main wird in sinnvolle Sections unterteilt.
+                                    </p>
+                                    <h4><i>Welche CSS-Layout-Mechanismen wurden eingesetzt und warum? (Alexander Gromov)</i></h4>
+                                    <p>
+                                        Die Nav ist eine Flexbox, damit alles in einer Reihe anzeigt wird. Alles weitere wird dann Seitenspezifisch im Main gelayoutet.
+                                        Im Allgemeinen wird Main mit Flexboxen gelayoutet. Fast jede Seite hat ein eigenes Stylesheet für den Main-Bereich.
+                                        Flexbox wurde benutzt, um meistens alles zentriert und in einer Spalte darzustellen, mit Ausnahme der listopenings, welche die Flexbox als Reihe nutzt und innerhalb der Flexbox eine weitere als Spalte nutzt.
+                                    </p>
+                                </li>
+                                <li>Responsivität (Alexander Gromov)
+                                    <h4><i>Welche Breakpoints wurden definiert und welche Auswirkungen haben sie auf das Layout?</i></h4>
+                                    <p>
+                                        Es gibt insgesamt fünf Breakpoints, vier davon sind in <i>design.css</i> und gelten für alle Seiten.<br>
+                                        <u>Breakpoint bei 1308px:</u> Schriftgröße im Nav wird verkleinert.<br>
+                                        <u>Breakpoint bei 1045px:</u> Schriftgröße im Nav wird verkleinert, Logo im Header wird durch Schiftzug ersetzt.<br>
+                                        <u>Breakpoint bei 700px vertikal:</u> Logo im Header wird durch Schiftzug ersetzt.<br>
+                                        <u>Breakpoint bei 685px:</u> Nav wird unter den Header geschoben.<br>
+                                        <u>Breakpoint für listopenings bei 990px:</u> Flexbox-Layout wird von Row zu Column geändert.
+                                    </p>
+                                    <h4><i>Welchem Zweck dienen die definierten Breakpoints im konkreten Anwendungsszenario (z.B Zielendgeräte)?</i></h4>
+                                    <p>
+                                        Die Verkleinerung der Schiftgröße bei Nav dient dazu, dass Nav sich zumindest bei den meisten Fenstergrößen nicht über zwei Zeilen erstreckt.<br>
+                                        Das Ersetzen des Logos durch einen Schriftzug dient dazu, dass Aside besser zu sehen ist.<br>
+                                        Das Verschieben der Nav unter den Header verhindert, dass sich die Nav-Elemente überlappen.<br>
+                                        Das Ändern der Richtung der Flexbox in listopenings verhindert, dass die linke Section der Seite sich in das Aside und den Header reinschiebt.
+                                    </p>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Server (Daniel Ackermann)
+                            <ol>
+                                <li>Modulstruktur
+                                    <h4><i>Wie und nach welchen Prinzipien wurden die Module der Server-Implementierung strukturiert?</i></h4>
+                                    <p>
+                                        Die Serverimplementierung basiert auf dem Web-Framework Express.
+                                        Die Konfiguration findet in der app.js statt, das Routing in der router.js.
+                                        Die Datenhaltung findet in dem Ordner models statt.<br>
+                                        In der app.js finden folgende Konfigurationen statt:<br>
+                                        - Express wird eingebunden.<br>
+                                        - Das Verzeichnis für die statischen Dateien wird konfiguriert.<br>
+                                        - EJS wird als Template-Engine konfiguriert, danach wird das Verzeichnis festgelegt, in dem EJS die Templates suchen soll.<br>
+                                        - Der Router wird auf der App registriert.<br>
+                                        - Die App soll auf den Port 8020 lauschen, also ist die App unter dieser IP für Clients erreichbar.<br>
+                                        - Im Router wird der body-parser verwendet.
+                                    </p>
+                                </li>
+                                <li>Unterstützte URLs/Endpunkte
+                                    <h4><i>Welche HTTP-Anfragen werden durch das Routing des Servers unterstützt?</i></h4>
+                                    <table class="documentation">
+                                        <tr>
+                                            <th>URL</th>
+                                            <th>HTTP-Methode</th>
+                                            <th>Aktion</th>
+                                        </tr>
+                                        <tr>
+                                            <td>/</td>
+                                            <td>GET</td>
+                                            <td>Anzeige der Homepage</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/positions</td>
+                                            <td>GET</td>
+                                            <td>Anzeige der Liste der Stellungen</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/positions/analyse/position:id</td>
+                                            <td>GET</td>
+                                            <td>Anzeige der Detailseite zu der jeweiligen Stellung</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/formposition</td>
+                                            <td>GET</td>
+                                            <td>Anzeige des Formulars zum Anlegen einer neuen Stellung</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/openings</td>
+                                            <td>GET</td>
+                                            <td>Anzeige der Liste der Eröffnungen</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/openings/schottische_partie</td>
+                                            <td>GET</td>
+                                            <td>Anzeige der persistenten "Schottische Partie" Eröffnung</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/openings/schottische_partie/:name</td>
+                                            <td>GET</td>
+                                            <td>Anzeige einer Detailseite zu einer Variante der "Schottischen Partie"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/openings/analyse/:id</td>
+                                            <td>GET</td>
+                                            <td>Anzeige der Detailseite zu einer Stellung der Eröffnung</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/formopening</td>
+                                            <td>GET</td>
+                                            <td>Anzeige des Formulars zum Anlegen einer neuen Eröffnung</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/formposition</td>
+                                            <td>POST</td>
+                                            <td>Neuanlage einer Stellung</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/formopening</td>
+                                            <td>POST</td>
+                                            <td>Neuanlage einer Eröffnung</td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>Start der Anwendung (Daniel Ackermann)
+                    <h4><i>Welche Schritte sind zum Start der Anwendung notwendig und unter welcher URL ist die Anwendung erreichbar?</i></h4>
+                    <p>Zum Starten der Anwendung muss die app.js beispielsweise mit "node app.js" ausgeführt werden. Die Anwendung ist dann unter localhost:8020 erreichbar.</p>
+                </li>
+                <li>Autorenschaft der Quellcode-Dateien (Alexander Gromov)
+                    <h4><i>Welches Gruppenmitglied ist für welche Quellcode-Dateien verantwortlich?</i></h4>
+                    <table class="documentation">
+                        <tr>
+                            <th>Autor(Name, Vorname (Matrikelnr.))</th>
+                            <th>Dateien</th>
+                        </tr>
+                        <tr>
+                            <td>Ackermann, Daniel (7105863)</td>
+                            <td>
+                                <ul>
+                                    <li>models/positions.js</li>
+                                    <li>public/css/design.css</li>
+                                    <li>public/css/documentation.css</li>
+                                    <li>public/css/formposition.css</li>
+                                    <li>public/css/listpositions.css</li>
+                                    <li>public/css/position.css</li>
+                                    <li>public/css/chessboard.css</li>
+                                    <li>views/includes/chessboard.ejs</li>
+                                    <li>views/formposition.ejs</li>
+                                    <li>views/listpositions.ejs</li>
+                                    <li>views/position.ejs</li>
+                                    <li>../doc/documentation.ejs</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gromov, Alexander (7201134)</td>
+                            <td>
+                                <ul>
+                                    <li>models/openings.js</li>
+                                    <li>public/css/design.css</li>
+                                    <li>public/css/documentation.css</li>
+                                    <li>public/css/formopening.css</li>
+                                    <li>public/css/listopenings.css</li>
+                                    <li>public/css/opening.css</li>
+                                    <li>public/js/formopeningtable.js</li>
+                                    <li>views/includes/aside.ejs</li>
+                                    <li>views/includes/footer.ejs</li>
+                                    <li>views/includes/header.ejs</li>
+                                    <li>views/includes/nav.ejs</li>
+                                    <li>views/404.ejs</li>
+                                    <li>views/homepage.ejs</li>
+                                    <li>views/formopening.ejs</li>
+                                    <li>views/listopenings.ejs</li>
+                                    <li>views/opening.ejs</li>
+                                    <li>../doc/documentation.ejs</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ol>
+        </main>
+    </body>
+</html>

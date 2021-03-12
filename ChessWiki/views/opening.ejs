@@ -46,7 +46,7 @@
         <div id="positions">
             <% if(opening.moves.length >= 10) { %>
             <div>
-                <a href="/openings/analyse/<%= opening.convertNameToURL() %><%= opening.moves.length/2 %>">
+                <a href="/openings/analyse/<%=opening.convertNameToURL()%>_move<%=opening.moves.length/2%>">
                     <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.moves.length/2)}) %>
                 </a>
                 <div><%= opening.convertToPosition(opening.moves.length / 2).currentFullMove() %></div>
@@ -54,14 +54,14 @@
             <% } %>
             <% if(opening.moves.length >= 4) { %>
             <div>
-                <a href="/openings/analyse/<%= opening.convertNameToURL() %><%= opening.moves.length-2 %>">
+                <a href="/openings/analyse/<%=opening.convertNameToURL()%>_move<%=opening.moves.length-2%>">
                     <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.moves.length-2)}) %>
                 </a>
                 <div><%= opening.convertToPosition(opening.moves.length - 2).currentFullMove() %></div>
             </div>
             <% } %>
             <div>
-                <a href="/openings/analyse/<%= opening.convertNameToURL() %><%= opening.moves.length %>">
+                <a href="/openings/analyse/<%=opening.convertNameToURL()%>_move<%=opening.moves.length%>">
                     <%- include("includes/chessboard.ejs", {position: opening.convertToPosition()}) %>
                 </a>
                 <div><%= opening.convertToPosition().currentFullMove() %></div>
