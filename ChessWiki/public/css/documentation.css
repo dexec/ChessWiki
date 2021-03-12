@@ -3,7 +3,7 @@ main {
     margin-right: 20px;
 }
 
-li {
+li,h1 {
     font-weight: bold;
 }
 

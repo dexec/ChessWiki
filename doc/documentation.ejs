@@ -13,32 +13,51 @@
 <%- include("../ChessWiki/views/includes/nav.ejs") %>
 <main>
     <ol>
-        <li>Beschreibung des Anwendungsszenarios</li>
-        <li>Fachobjekte der Anwendung</li>
-        <li>Beschreibung und Begründung der Implementierungsentscheidungen
+        <li><h1>Beschreibung des Anwendungsszenarios</h1></li>
+        <li><h1>Fachobjekte der Anwendung</h1></li>
+        <li><h1>Beschreibung und Begründung der Implementierungsentscheidungen</h1>
             <ol>
-                <li>Client
+                <li><h2>Client</h2>
                     <ol>
-                        <li>Strukturierung der HTML-Seiten</li>
-                        <li>Layout</li>
-                        <li>Responsivität</li>
+                        <li><h2>Strukturierung der HTML-Seiten</h2></li>
+                        <li><h2>Layout</h2></li>
+                        <li><h2>Responsivität</h2></li>
                     </ol>
                 </li>
-                <li>Server
+                <li><h2>Server</h2>
                     <ol>
-                        <li>Modulstruktur</li>
-                        <li>Unterstützte URLs/Endpunkte</li>
+                        <li><h2>Modulstruktur</h2></li>
+                        <li><h2>Unterstützte URLs/Endpunkte</h2></li>
                     </ol>
                 </li>
             </ol>
         </li>
-        <li>Start der Anwendung</li>
-        <li>Autorenschaft der Quellcode-Dateien</li>
+        <li><h1>Start der Anwendung</h1></li>
+        <li><h1>Autorenschaft der Quellcode-Dateien</h1></li>
     </ol>
 
 
 
-    <h2><i>Welche HTML-Seiten sind in der Anwendung enthalten?</i></h2>
+    <p>
+        Das ChessWiki lässt Eröffnungen und Schachstellungen abbilden, Details ausgeben und neue anlegen.
+
+        Stellung:
+        In einem Schachspiel, bestehend aus 16 Figuren und 64 Feldern, kann es zu diversen Stellungen kommen.
+        Jede Stellung hat eine gewisse Bewertung, auch Analyse genannt. Im ChessWiki kann man jede denkliche
+        Stellung abbilden und analysieren lassen.
+
+        Eröffnung:
+        Jedes Schachspiel beginnt mit einer Eröffnung, welche ungefähr die ersten 10-20 Züge umfasst.
+        Im ChessWiki kann man sich Eröffnungen, deren Zugfolge und weitere Details anschauen und neue Eröffnung anlegen.
+        Zu jeder Eröffnung werden anschließend Stellungen angezeigt.
+    </p>
+    <h1>Fachobjekte der Anwendung</h1>
+    <h3><i>Textuelle Darstellung, ggf. ergänzt um ein UML-Klassendiagramm: Welche Fachobjekte
+        sind in der Anwendung enthalten? Welche Attribute und Beziehungen besitzen die Fachobjekte? </i></h3>
+    <p>
+        Die enthaltenen Fachbjekte sind Eröffnung und Stellung. Eine Eröffnung enthält verschiedene Stellungen.
+    </p>
+    <h3><i>Welche HTML-Seiten sind in der Anwendung enthalten?</i></h3>
     <p>Das Chesswiki ist unterteilt in HTML-Seiten, die einmalig vorkommen, und HTML-Seiten, die auf mehreren Seiten
         angezeigt werden.
         Alle HTML-Seiten wurde als Templates umgesetzt.
@@ -51,35 +70,35 @@
         Die wiederverwendbaren Seiten sind "aside","chessboard","footer","header" und "nav". Diese Seiten sind auf fast
         jeder Seite Bestandteile.
     </p>
-    <h2><i>Wie kann zwischen den einzelnen HTML-Seiten navigiert werden?</i></h2>
+    <h3><i>Wie kann zwischen den einzelnen HTML-Seiten navigiert werden?</i></h3>
     <p>Zur Navigation kann die Navigationsleiste verwendet werden.
         In "listpositions" sind alle Schachbretter ein Link zur jeweiligen Detailseite. Der Button unten führt zum
         Formular.
     </p>
-    <h2><i>Falls semantiklose Elemnte eingesetzt wurden: Warum wurden diese eingesetzt?</i></h2>
+    <h3><i>Falls semantiklose Elemnte eingesetzt wurden: Warum wurden diese eingesetzt?</i></h3>
     <p>In formposition wurde semantiklose divs verwendet, um zwei HTML-Tags zu einem Kind zu machen, damit sie in der
         flexbox nebeneinander auftauchen, statt untereinander.</p>
 
-    <h2><i>Wie ist das einheitlichen Layout der Web-Anwendung aufgebaut?</i></h2>
+    <h3><i>Wie ist das einheitlichen Layout der Web-Anwendung aufgebaut?</i></h3>
     <p>Grundsätzlich unterliegt jede Seite der selben Struktur.<br>
         <img alt="gridlayout" src="img/gridlayout.jpg">
         Alles in main wird in sinnvolle sections unterteilt.
     </p>
-    <h2><i>Welche CSS-Layout-Mechanismen wurden eingesetzt und warum?</i></h2>
+    <h3><i>Welche CSS-Layout-Mechanismen wurden eingesetzt und warum?</i></h3>
     <p>Die Nav ist eine flexbox, damit alles in einer Reihe anzeigt wird.
         Alles weitere wird dann Seitenspezifisch im main gelayoutet.
         Im allgemeinen wird main mit flexboxen gelayoutet.
     </p>
-    <h2><i>Welche Breakpoints wurden definiert und welche Auswirkungen haben sie auf das Layout?</i></h2>
+    <h3><i>Welche Breakpoints wurden definiert und welche Auswirkungen haben sie auf das Layout?</i></h3>
     <p>
 
     </p>
-    <h2><i>Welchem Zweck dienen die diefinierten Breakpoints im konkreten Anwendungsszenario (z.B Zielendgeräte)?</i>
-    </h2>
+    <h3><i>Welchem Zweck dienen die diefinierten Breakpoints im konkreten Anwendungsszenario (z.B Zielendgeräte)?</i>
+    </h3>
     <p>
 
     </p>
-    <h2><i>Wie und nach welchen Prinzipien wurden die Module der Server-Implementierung strukturiert?</i></h2>
+    <h3><i>Wie und nach welchen Prinzipien wurden die Module der Server-Implementierung strukturiert?</i></h3>
     <p>
         Die Serverimplementierung basiert auf dem Web-Framework Express.
         Die Konfiguration findet in der app.js statt, das Routing in der router.js.
@@ -93,7 +112,7 @@
         Die app soll auf dem Port 8020 lauschen, also ist er unter dieser IP für Clients erreichbar.
         Im router selber wird noch der body-parser verwendet.
     </p>
-    <h2><i>Welche HTTp-Anfragen werden durch das Routing des Servers unterstützt?</i></h2>
+    <h3><i>Welche HTTP-Anfragen werden durch das Routing des Servers unterstützt?</i></h3>
     <table class="documentation">
         <tr>
             <th>URL</th>
@@ -156,11 +175,11 @@
             <td>Neuanlage einer Eröffnung</td>
         </tr>
     </table>
-    <h2><i>Welche Schritte sind zum Start der Anwendung notwendig und unter welcher URL ist die Anwendung
-            erreichbar?</i></h2>
+    <h3><i>Welche Schritte sind zum Start der Anwendung notwendig und unter welcher URL ist die Anwendung
+            erreichbar?</i></h3>
     <p>Zum Starten der Anwendung muss die app.js ausgeführt werden. Die Anwendung ist dann unter localhost:8020
         erreichbar.</p>
-    <h2><i>Welches Gruppenmitglied ist für welche Quellcode-Dateien verantwortlich?</i></h2>
+    <h3><i>Welches Gruppenmitglied ist für welche Quellcode-Dateien verantwortlich?</i></h3>
     <table class="documentation">
         <tr>
             <th>Autor(Name, Vorname (Matrikelnr.))</th>
