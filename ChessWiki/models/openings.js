@@ -10,7 +10,7 @@ function Opening(ecoCat, ecoSubcat, parent, name, variations, moves, desc) {
 
     this.eco = function() {
         return ecoCat + ecoSubcat;
-    };
+    }
 
     this.convertNameToURL = function () {
         return this.convertToURL(name);

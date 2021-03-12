@@ -132,6 +132,10 @@ footer a {
     color: mintcream;
 }
 
+:required {
+    border-color: crimson;
+}
+
 @media screen and (max-width: 1308px) {
     nav a {
         font-size: x-large;

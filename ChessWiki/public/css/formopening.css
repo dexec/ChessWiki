@@ -9,7 +9,3 @@ section, form {
     margin: 20px;
     font-size: x-large;
 }
-
-:required {
-    border-color: crimson;
-}
