@@ -1,3 +1,5 @@
+/*Bearbeitet von Alexander Gromov und Daniel Ackermann (ein Breakpoint)*/
+
 /*Alexander Gromov Anfang*/
 html, body {
     min-height: 100%; /* Damit der ganze Platz eingenommen wird und der Footer so immer ganz unten angezeigt wird (siehe grid-template-rows in #maincontainer) */
@@ -29,6 +31,9 @@ header a {
     padding-right: 20px;
 }
 
+/*Solange das Logo da ist, sieht man den span nicht.
+Sobald die Media Query greift, wird das display auf inline-block gesetzt, das Logo verschwindet
+und man sieht "ChessWiki" an seiner Stelle*/
 header a span {
     color: white;
     letter-spacing: 0.9em;

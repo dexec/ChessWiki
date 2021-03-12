@@ -1,3 +1,7 @@
+//Bearbeitet von Alexander Gromov
+//Persistente Datenhaltung der Eröffnungen
+
+//Assoziation zwischen den Fachobjekten Eröffnung und Stellung
 const dataPosition = require("./positions");
 
 function Opening(ecoCat, ecoSubcat, parent, name, variations, moves, desc) {
@@ -24,6 +28,7 @@ function Opening(ecoCat, ecoSubcat, parent, name, variations, moves, desc) {
         return str.replace(" ", "_").toLowerCase();
     }
 
+    //Eine Eröffnung nach "num" Zügen wird in ein Position-Object umgewandelt
     this.convertToPosition = function (num) {
         let pos = "rnbqkbnr/pppppppp/eeeeeeee/eeeeeeee/eeeeeeee/eeeeeeee/PPPPPPPP/RNBQKBNR"; // Grundstellung
         let castl = "KQkq"; //Ausgangslage der Rochademöglichkeiten

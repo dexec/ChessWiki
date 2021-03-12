@@ -1,3 +1,6 @@
+<!--Bearbeitet von Alexander Gromov-->
+<!--Das ist die Seite zum Anlegen einer neuen Eröffnung. Mit dem Abschicken des Formulars
+taucht die Eröffnung in der Liste der Eröffnungen auf.-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +48,7 @@
                         <textarea name="desc" id="desc" cols="50" rows="5"></textarea>
                     </p>
                     <label>Zugabfolge</label>
+                    <!-- Der Inhalt kommt in ein Array "moves" -->
                     <table>
                         <tr>
                             <td><label for="zug1">1.&ensp;</label></td>
@@ -72,6 +76,7 @@
                             <td><input name="moves" id="zug5" type="text" size="5" pattern="^([KQRBN]?[a-h][1-8][-x][a-h][1-8][\+#]?|[O0o]-[O0o](-[O0o])?)$"></td>
                         </tr>
                     </table>
+                    <!--Beim Klicken des Button wird die Tabelle oben um eine Zeile erweitert-->
                     <button type="button" onclick="createTable()">Neue Zeile</button>
                     <p>
                         <label for="variations">Fortsetzungen (bitte mit Kommata getrennt)&ensp;</label>

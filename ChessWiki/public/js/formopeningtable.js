@@ -1,3 +1,7 @@
+/*Bearbeitet von Alexander Gromov
+Durch den Button-Klick wird die Tabelle im Formular zum Anlegen einer Eröffnung
+um eine Zeile erweitert*/
+
 let moveNumber = 5;
 
 function createTable() {

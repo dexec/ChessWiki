@@ -1,3 +1,6 @@
+/*Bearbeitet von Daniel Ackermann
+Spezifisches Styling des Inhaltes der Detailseite einer Stellung*/
+
 section {
     display: flex;
     flex-flow: column nowrap;
@@ -15,5 +18,5 @@ table#chessboard {
 }
 
 p {
-    margin:0.5%;
+    margin: 0.5%;
 }

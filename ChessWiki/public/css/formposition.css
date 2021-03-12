@@ -1,3 +1,6 @@
+/*Bearbeitet von Daniel Ackermann
+Spezifisches Styling des Formulars zum Anlegen einer Stellung*/
+
 section, form {
     display: flex;
     flex-flow: column nowrap;

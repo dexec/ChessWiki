@@ -1,72 +1,75 @@
+<!--Bearbeitet von Alexander Gromov-->
+<!--Die Detailseite der Stellungen-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><%=opening.name%></title>
+    <title><%= opening.name %></title>
     <link href="/img/favicon.ico" rel="icon">
     <link href="/css/design.css" rel="stylesheet" type="text/css">
     <link href="/css/chessboard.css" rel="stylesheet" type="text/css">
     <link href="/css/opening.css" rel="stylesheet" type="text/css">
 </head>
-    <body>
-        <%- include("includes/header.ejs") %>
-        <%- include("includes/nav.ejs") %>
-        <main>
-            <section>
-                <h1><%=opening.name;%> (aus <%=opening.parent%> heraus)</h1>
-                <p><u>ECO-Schlüssel:</u>&ensp;<%=opening.eco();%></p>
-                <p id="desc"><u>Beschreibung:</u><br><%=opening.desc;%></p>
-                <p><u>Geht hervor aus:</u>&ensp;<%=opening.parent;%></p>
-                <u>Zugabfolge:</u>
-                <ol>
-                    <% for (let i = 0; i < opening.moves.length / 2; i++) { %>
-                        <li>
-                            &ensp;<%=opening.moves[i*2];%>&ensp;<%=opening.moves[i*2+1];%>
-                        </li>
-                    <% } %>
-                </ol>
-                <u>Anschließende Variationen:</u>
-                <% if(opening.variations.length === 0) { %>
-                    noch keine vorhanden
-                <% } else { %>
-                    <ul>
-                        <% for(let variation of opening.variations) { %>
-                            <li>
-                                <%=variation%>
-                            </li>
-                        <% } %>
-                    </ul>
+<body>
+<%- include("includes/header.ejs") %>
+<%- include("includes/nav.ejs") %>
+<main>
+    <section>
+        <h1><%= opening.name; %> (aus <%= opening.parent %> heraus)</h1>
+        <p><u>ECO-Schlüssel:</u>&ensp;<%= opening.eco(); %></p>
+        <p id="desc"><u>Beschreibung:</u><br><%= opening.desc; %></p>
+        <p><u>Geht hervor aus:</u>&ensp;<%= opening.parent; %></p>
+        <u>Zugabfolge:</u>
+        <ol>
+            <% for (let i = 0; i < opening.moves.length / 2; i++) { %>
+            <li>
+                &ensp;<%= opening.moves[i * 2]; %>&ensp;<%= opening.moves[i * 2 + 1]; %>
+            </li>
+            <% } %>
+        </ol>
+        <u>Anschließende Variationen:</u>
+        <% if(opening.variations.length === 0) { %>
+            noch keine vorhanden
+        <% } else { %>
+            <ul>
+                <% for(let variation of opening.variations) { %>
+                <li>
+                    <%= variation %>
+                </li>
                 <% } %>
-            </section>
-            <section>
-                <h2>Abbildungen der Eröffnung</h2>
-                <div id="positions">
-                    <% if(opening.moves.length >= 10) { %>
-                        <div>
-                            <a href="/openings/analyse/<%=opening.convertNameToURL()%><%=opening.moves.length/2%>">
-                                <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.moves.length/2)}) %>
-                            </a>
-                            <div><%=opening.convertToPosition(opening.moves.length/2).currentFullMove()%></div>
-                        </div>
-                    <% } %>
-                    <% if(opening.moves.length >= 4) { %>
-                        <div>
-                            <a href="/openings/analyse/<%=opening.convertNameToURL()%><%=opening.moves.length-2%>">
-                            <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.moves.length-2)}) %>
-                            </a>
-                            <div><%=opening.convertToPosition(opening.moves.length-2).currentFullMove()%></div>
-                        </div>
-                    <% } %>
-                    <div>
-                        <a href="/openings/analyse/<%=opening.convertNameToURL()%><%=opening.moves.length%>">
-                        <%- include("includes/chessboard.ejs", {position: opening.convertToPosition()}) %>
-                        </a>
-                        <div><%=opening.convertToPosition().currentFullMove()%></div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <%- include("includes/aside.ejs") %>
-        <%- include("includes/footer.ejs") %>
-    </body>
+            </ul>
+        <% } %>
+    </section>
+    <section>
+        <h2>Abbildungen der Eröffnung</h2>
+        <div id="positions">
+            <% if(opening.moves.length >= 10) { %>
+            <div>
+                <a href="/openings/analyse/<%= opening.convertNameToURL() %><%= opening.moves.length/2 %>">
+                    <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.moves.length/2)}) %>
+                </a>
+                <div><%= opening.convertToPosition(opening.moves.length / 2).currentFullMove() %></div>
+            </div>
+            <% } %>
+            <% if(opening.moves.length >= 4) { %>
+            <div>
+                <a href="/openings/analyse/<%= opening.convertNameToURL() %><%= opening.moves.length-2 %>">
+                    <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.moves.length-2)}) %>
+                </a>
+                <div><%= opening.convertToPosition(opening.moves.length - 2).currentFullMove() %></div>
+            </div>
+            <% } %>
+            <div>
+                <a href="/openings/analyse/<%= opening.convertNameToURL() %><%= opening.moves.length %>">
+                    <%- include("includes/chessboard.ejs", {position: opening.convertToPosition()}) %>
+                </a>
+                <div><%= opening.convertToPosition().currentFullMove() %></div>
+            </div>
+        </div>
+    </section>
+</main>
+<%- include("includes/aside.ejs") %>
+<%- include("includes/footer.ejs") %>
+</body>
 </html>

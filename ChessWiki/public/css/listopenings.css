@@ -1,3 +1,6 @@
+/*Bearbeitet von Alexander Gromov
+Spezifisches Styling des Inhaltes der Liste der Eröffnungen*/
+
 main {
     display: flex;
     flex-flow: row nowrap;
@@ -70,7 +73,9 @@ section a:hover {
     counter-increment: econumber;
     content: "C"counter(econumber)": ";
 }
+/* Ende Nummerierung der Eröffnungsliste */
 
+/* Damit die linke Seite nicht auf das Aside überfließt */
 @media screen and (max-width: 990px) {
     main {
         flex-flow: column nowrap;
