@@ -12,17 +12,32 @@
     <%- include("includes/header.ejs")%>
     <%- include("includes/nav.ejs")%>
     <main>
-        <section id="intro">
-            <h2>Was ist eine Eröffnung im Schach?</h2>
-            <p>
-                Eine Eröffnung beschreibt die ersten 10 bis 15 Züge einer Partie.
-                In dieser Phase konzentrieren sich beide Seiten einerseits auf eine schnelle Entwicklung ihrer Figuren, andererseits auf die Kontrolle des Zentrums.
-                Es gibt viele bereits ausgearbeitete Eröffnungen, die vorgeben, welche Zugfolgen man spielen muss, um in den ersten Zügen der Partie im Vorteil zu sein.
-            </p>
-            <form action="/formopening"><input type="submit" value="Neue Eröffnung anlegen"></form>
+        <section id="leftside">
+            <section id="intro">
+                <h2>Was ist eine Eröffnung im Schach?</h2>
+                <p>
+                    Eine Eröffnung beschreibt die ersten 10 bis 15 Züge einer Partie.
+                    In dieser Phase konzentrieren sich beide Seiten einerseits auf eine schnelle Entwicklung ihrer Figuren, andererseits auf die Kontrolle des Zentrums.
+                    Es gibt viele bereits ausgearbeitete Eröffnungen, die vorgeben, welche Zugfolgen man spielen muss, um in den ersten Zügen der Partie im Vorteil zu sein.
+                </p>
+                <form action="/formopening"><input type="submit" value="Neue Eröffnung anlegen"></form>
+            </section>
+            <section>
+                <h2>Liste von Eröffnungen mit Details</h2>
+                <ul>
+                    <% for(let i = 0; i < openings.length; i++) { %>
+                        <!-- Das ist natürlich sehr case-spezifisch gelöst, aber der Einfachheit halber da man einen festen Datensatz vorgegeben hat. -->
+                        <% if(i >= 1 && i <= 3) { %>
+                            <li class="variant"><a href="/openings/schottische_partie/<%=openings[i].convertNameToURL()%>"><%=openings[i].eco()%>: <%=openings[i].name%></a></li>
+                        <% } else { %>
+                            <li><a href="/openings/<%=openings[i].convertNameToURL()%>"><%=openings[i].eco()%>: <%=openings[i].name%></a></li>
+                        <% } %>
+                    <% } %>
+                </ul>
+            </section>
         </section>
         <section id="list">
-            <h2>Liste von Eröffnungen</h2>
+            <h2>Ausschnitt Eröffnungshierarchie</h2>
             <ol type="A">
                 <li>Unregelmäßige Eröffnungen, teilweise geschlossene Eröffnungen</li>
                 <li>Halboffene Eröffnungen (außer Französisch)</li>

@@ -4,3 +4,12 @@ section, form {
     align-items: center;
     text-align: center;
 }
+
+#submit {
+    margin: 20px;
+    font-size: x-large;
+}
+
+:required {
+    border-color: crimson;
+}

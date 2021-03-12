@@ -13,15 +13,17 @@ function createTable() {
     let input2 = document.createElement("input");
 
     label.setAttribute('for', 'zug' + moveNumber);
-    label.textContent= moveNumber + '. ';
-    input1.setAttribute('name', 'zug' + moveNumber + 'w');
+    label.textContent = moveNumber + '. ';
+    input1.setAttribute('name', 'moves');
     input1.setAttribute('id', 'zug' + moveNumber);
     input1.setAttribute('type', 'text');
     input1.setAttribute('size', '5');
-    input2.setAttribute('name', 'zug' + moveNumber + 'b');
+    input1.setAttribute('pattern', '^([KQRBN]?[a-h][1-8][-x][a-h][1-8][\\+#]?|[O0o]-[O0o](-[O0o])?)$');
+    input2.setAttribute('name', 'moves');
     input2.setAttribute('id', 'zug' + moveNumber);
     input2.setAttribute('type', 'text');
     input2.setAttribute('size', '5');
+    input2.setAttribute('pattern', '^([KQRBN]?[a-h][1-8][-x][a-h][1-8][\\+#]?|[O0o]-[O0o](-[O0o])?)$');
 
     tr.append(td1);
     td1.after(td2);

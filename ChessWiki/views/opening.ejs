@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Position</title>
+    <title><%=opening.name%></title>
     <link href="/img/favicon.ico" rel="icon">
     <link href="/css/design.css" rel="stylesheet" type="text/css">
     <link href="/css/chessboard.css" rel="stylesheet" type="text/css">
@@ -13,24 +13,24 @@
         <%- include("includes/nav.ejs") %>
         <main>
             <section>
-                <h1><%= opening.name; %></h1>
+                <h1><%=opening.name;%> (aus <%=opening.parent%> heraus)</h1>
                 <p><u>ECO-Schlüssel:</u>&ensp;<%=opening.eco();%></p>
                 <p id="desc"><u>Beschreibung:</u><br><%=opening.desc;%></p>
                 <p><u>Geht hervor aus:</u>&ensp;<%=opening.parent;%></p>
                 <u>Zugabfolge:</u>
                 <ol>
-                    <% for (let i = 0; i < opening.getMoves().length / 2; i++) { %>
+                    <% for (let i = 0; i < opening.moves.length / 2; i++) { %>
                         <li>
-                            &ensp;<%=opening.getMoves()[i*2];%>&ensp;<%=opening.getMoves()[i*2+1];%>
+                            &ensp;<%=opening.moves[i*2];%>&ensp;<%=opening.moves[i*2+1];%>
                         </li>
                     <% } %>
                 </ol>
                 <u>Anschließende Variationen:</u>
-                <% if(opening.getVariations().length === 0) { %>
+                <% if(opening.variations.length === 0) { %>
                     noch keine vorhanden
                 <% } else { %>
                     <ul>
-                        <% for(let variation of opening.getVariations()) { %>
+                        <% for(let variation of opening.variations) { %>
                             <li>
                                 <%=variation%>
                             </li>
@@ -41,22 +41,24 @@
             <section>
                 <h2>Abbildungen der Eröffnung</h2>
                 <div id="positions">
-                    <% if(opening.getMoves().length >= 10) { %>
+                    <% if(opening.moves.length >= 10) { %>
                         <div>
-                            <a href="/openings/analyse/<%=opening.convertNameToURL()%><%=opening.getMoves().length/2%>">
-                                <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.getMoves().length/2)}) %>
+                            <a href="/openings/analyse/<%=opening.convertNameToURL()%><%=opening.moves.length/2%>">
+                                <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.moves.length/2)}) %>
                             </a>
-                            <div><%=opening.convertToPosition(opening.getMoves().length/2).currentFullMove()%></div>
+                            <div><%=opening.convertToPosition(opening.moves.length/2).currentFullMove()%></div>
+                        </div>
+                    <% } %>
+                    <% if(opening.moves.length >= 4) { %>
+                        <div>
+                            <a href="/openings/analyse/<%=opening.convertNameToURL()%><%=opening.moves.length-2%>">
+                            <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.moves.length-2)}) %>
+                            </a>
+                            <div><%=opening.convertToPosition(opening.moves.length-2).currentFullMove()%></div>
                         </div>
                     <% } %>
                     <div>
-                        <a href="/openings/analyse/<%=opening.convertNameToURL()%><%=opening.getMoves().length-2%>">
-                        <%- include("includes/chessboard.ejs", {position: opening.convertToPosition(opening.getMoves().length-2)}) %>
-                        </a>
-                        <div><%=opening.convertToPosition(opening.getMoves().length-2).currentFullMove()%></div>
-                    </div>
-                    <div>
-                        <a href="/openings/analyse/<%=opening.convertNameToURL()%><%=opening.getMoves().length%>">
+                        <a href="/openings/analyse/<%=opening.convertNameToURL()%><%=opening.moves.length%>">
                         <%- include("includes/chessboard.ejs", {position: opening.convertToPosition()}) %>
                         </a>
                         <div><%=opening.convertToPosition().currentFullMove()%></div>

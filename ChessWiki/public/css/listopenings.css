@@ -4,10 +4,14 @@ main {
     justify-content: space-around;
 }
 
-#intro {
+#leftside section {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+}
+
+#intro {
+    margin-bottom: 10vh;
 }
 
 #list {
@@ -24,20 +28,36 @@ section a {
     font-weight: bold;
 }
 
+section a:hover {
+    text-decoration: underline;
+}
+
+#leftside ul {
+    list-style-type: none;
+    position: relative;
+    right: 15px;
+}
+
+.variant {
+    position: relative;
+    list-style-type: disc;
+    left: 20px;
+}
+
 /* Ab hier für die Nummerierung der Eröffnungs-Liste */
-li ol {
+#list li ol {
     list-style-type: none;
 }
 
-ul {
+#list ul {
     list-style-type: disc;
 }
 
-ul > li > ul {
+#list ul > li > ul {
     list-style-type: circle;
 }
 
-li ol, section > ol > li > ol > li {
+#list li ol, section > ol > li > ol > li {
     position: relative;
     right: 15px;
 }
@@ -54,5 +74,8 @@ li ol, section > ol > li > ol > li {
 @media screen and (max-width: 990px) {
     main {
         flex-flow: column nowrap;
+    }
+    #intro {
+        margin-bottom: 0;
     }
 }
