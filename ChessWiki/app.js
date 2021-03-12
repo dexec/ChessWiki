@@ -1,3 +1,6 @@
+/*Bearbeitet von Daniel Ackermann
+Einstiegspunkt in die Anwendung, Konfiguration*/
+
 const express = require("express");
 const app = express();
 const router = require("./routes/routes.js");

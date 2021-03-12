@@ -1,3 +1,6 @@
+//Bearbeitet von Daniel Ackermann
+//Persistente Datenhaltung von Stellungen
+
 function Position(positionString, activeColor, castlingAvailability, numberOfMoves) {
     this.positionString = positionString;
     this.activeColor = function () {
@@ -13,12 +16,13 @@ function Position(positionString, activeColor, castlingAvailability, numberOfMov
         return abgabe;
     }
     this.numberOfMoves = function () {
-        // Wenn man eine neue Stellung anlegt, wird numberOfMoves als String übergeben und deswegen ist ein parseInt nötig
         return "Das Spiel ist im " + (numberOfMoves + 1) + ". halben Zug.";
     }
-    this.currentFullMove = function () { // von Alex geschrieben, damit es eine simple und zu Eröffnungen passende Alternative zu numberOfMoves gibt
+    this.currentFullMove = function () {
         return "Das Spiel nach " + Math.ceil(numberOfMoves / 2) + " ganzen Zügen.";
     }
+    //Für die Stellung wird eine Analyse durchgeführt, das heißt, es werden folgende Parameter zusammengerechnet:
+    //Zugrecht, Rochaderecht, Anzahl und Art der Figuren. Bei Vorteil für Weiß steigt die zahl, bei Vorteil für Schwarz sinkt die Zahl
     this.analysis = function () {
         let numberActiveColor = activeColor === "w" ? 0.2 : -0.2;
         let numberCastlingAvailability = function () {
@@ -124,4 +128,3 @@ module.exports = {
     positions : positions,
     Position: Position
 }
-

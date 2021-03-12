@@ -1,13 +1,20 @@
+/*Bearbeitet von Daniel Ackermann*/
+/*Regeln für die Darstellung eines Schachbrettes*/
+
+/*Keine Abstände zwischen den Feldern*/
 table#chessboard {
     border-collapse: collapse;
 }
 
+/*Größe eines Feldes*/
 table#chessboard td {
     text-align: center;
     height: 21px;
     width: 21px;
 }
 
+/*Die nächsten vier Regeln greifen jeweils auf den Rand der Tabelle zu,
+ohne die Notation mit einzurahmen (also 1-8, a-h)*/
 table#chessboard tr:first-of-type td:not(:first-of-type) {
     border-top: 2px solid;
 }
@@ -24,10 +31,12 @@ table#chessboard tr:not(:last-of-type) td:nth-of-type(2) {
     border-left: 2px solid;
 }
 
+/*Schriftgröße der Notation*/
 table#chessboard td:first-of-type, table#chessboard tr:last-of-type td {
     font-size: xx-small;
 }
 
+/*Die nächsten 4 Regeln sorgen für die korrekte Felderfarbe*/
 table#chessboard tr:nth-of-type(odd):not(:last-of-type) td:nth-of-type(odd):not(:first-of-type) {
     background-color: darkgray;
 }

@@ -1,3 +1,6 @@
+/*Bearbeitet von Alexander Gromov
+Spezifisches Styling des Inhaltes der Detailseite einer Eröffnung*/
+
 section {
     display: flex;
     flex-flow: column nowrap;
