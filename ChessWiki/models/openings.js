@@ -86,10 +86,10 @@ function Opening(ecoCat, ecoSubcat, parent, name, variations, moves, desc) {
                     posReplace(65, "K");
                     posReplace(66, "R");
                     castl = castl.replace("KQ", ""); // Rochiermöglichkeiten werden angepasst
-                } else if(move.length === 5) { // Keine Angabe von Figur bedeutet Bauernzug, Felder werden gelesen und in Indizes umgewandelt, auf welchen Figuren/Buchstaben angepasst werden
+                } else if(move.length === 5 || (move.length === 6 && (move.includes("+") || move.includes("#")))) { // Keine Angabe von Figur bedeutet Bauernzug, Felder werden gelesen und in Indizes umgewandelt, auf welchen Figuren/Buchstaben angepasst werden
                     posReplace(calcIndex(move.substr(0, 2)), "e")
                     posReplace(calcIndex(move.substr(3, 2)), "P")
-                } else if(move.length === 6) { // Ansonsten wird Figur herausgelesen und entsprechend umgestellt
+                } else if(move.length === 6 || (move.length === 7 && (move.includes("+") || move.includes("#")))) { // Ansonsten wird Figur herausgelesen und entsprechend umgestellt
                     const figure = move.substr(0, 1);
                     posReplace(calcIndex(move.substr(1, 2)), "e")
                     posReplace(calcIndex(move.substr(4, 2)), figure)
@@ -107,10 +107,10 @@ function Opening(ecoCat, ecoSubcat, parent, name, variations, moves, desc) {
                     posReplace(2, "k");
                     posReplace(3, "r");
                     castl = castl.replace("kq", ""); // Rochiermöglichkeiten werden angepasst
-                } else if(move.length === 5) { // Keine Angabe von Figur bedeutet Bauernzug, Felder werden gelesen und in Indizes umgewandelt, auf welchen Figuren/Buchstaben angepasst werden
+                } else if(move.length === 5 || (move.length === 6 && (move.includes("+") || move.includes("#")))) { // Keine Angabe von Figur bedeutet Bauernzug, Felder werden gelesen und in Indizes umgewandelt, auf welchen Figuren/Buchstaben angepasst werden
                     posReplace(calcIndex(move.substr(0, 2)), "e")
                     posReplace(calcIndex(move.substr(3, 2)), "p")
-                }  else if(move.length === 6) { // Ansonsten wird Figur herausgelesen und entsprechend umgestellt
+                }  else if(move.length === 6 || (move.length === 7 && (move.includes("+") || move.includes("#")))) { // Ansonsten wird Figur herausgelesen und entsprechend umgestellt
                     const figure = move.substr(0, 1).toLowerCase();
                     posReplace(calcIndex(move.substr(1, 2)), "e")
                     posReplace(calcIndex(move.substr(4, 2)), figure)
