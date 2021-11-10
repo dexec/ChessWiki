@@ -1,2 +1,2 @@
 # ChessWiki
-Diese Projekt ist im Rahmen einer Hausarbeit für Web-Technologien entstanden.
+Dieses Projekt ist im Rahmen einer Hausarbeit für das Modul Web-Technologien entstanden.
